@@ -1,0 +1,2074 @@
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BEHIND THE SMILE – Nhìn sau nụ cười | THPT Lương Thế Vinh</title>
+    <meta
+      name="description"
+      content="Dự án Nghiên cứu Khoa học Kỹ thuật: Nhìn sau nụ cười – Nhận thức khoảng cách Nụ cười & Cảm xúc (Smile–Feel Gap) và hệ sinh thái chăm sóc sức khỏe tinh thần học đường tại Trường THPT Lương Thế Vinh."
+    />
+    <meta property="og:title" content="BEHIND THE SMILE – Nhìn sau nụ cười | THPT Lương Thế Vinh" />
+    <meta
+      property="og:description"
+      content="Trang truyền thông tâm lý học đường tương tác: Thấu hiểu những bạn học sinh luôn cười nói bên ngoài nhưng chịu áp lực nội tâm cao."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts: Be Vietnam Pro (Chuyên dụng cho tiếng Việt) & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cream: {
+                50: '#FCFBF9',
+                100: '#FAF8F5',
+                200: '#F3EFEA',
+                300: '#E8E1D7',
+                400: '#D5C9BC',
+              },
+              mint: {
+                50: '#F2FAF8',
+                100: '#E6F4F1',
+                200: '#CEEAE4',
+                300: '#A1D7CD',
+                400: '#6CBFB2',
+                500: '#42A899',
+                600: '#318B7E',
+                700: '#2A6F68',
+                800: '#1E534E',
+                900: '#153A37',
+                950: '#0E2725',
+              },
+              sun: {
+                50: '#FFFBEB',
+                100: '#FEF3C7',
+                200: '#FDE68A',
+                300: '#FCD34D',
+                400: '#FBBF24',
+                500: '#F4A261',
+                600: '#E76F51',
+                700: '#C85A3D',
+              },
+              calm: {
+                slate: '#334155',
+                dark: '#1E293B',
+              },
+            },
+            fontFamily: {
+              sans: ['"Be Vietnam Pro"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+              display: ['"Plus Jakarta Sans"', '"Be Vietnam Pro"', 'sans-serif'],
+            },
+            boxShadow: {
+              soft: '0 4px 20px -2px rgba(42, 111, 104, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04)',
+              card: '0 10px 30px -5px rgba(21, 58, 55, 0.06), 0 4px 10px -2px rgba(0, 0, 0, 0.03)',
+              hover: '0 20px 35px -8px rgba(42, 111, 104, 0.15)',
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      /* 3D Flip Card Styles */
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      .transform-style-3d {
+        transform-style: preserve-3d;
+      }
+      .backface-hidden {
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+      }
+      .rotate-y-180 {
+        transform: rotateY(180deg);
+      }
+      .flip-card-inner {
+        transition: transform 0.65s cubic-bezier(0.34, 1.25, 0.64, 1);
+      }
+      .flip-card.is-flipped .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      @media (hover: hover) {
+        .flip-card:hover .flip-card-inner {
+          transform: rotateY(180deg);
+        }
+      }
+
+      /* Audio wave animation */
+      @keyframes soundwave {
+        0%, 100% { height: 6px; }
+        50% { height: 26px; }
+      }
+      .animate-wave-1 { animation: soundwave 1.1s ease-in-out infinite; }
+      .animate-wave-2 { animation: soundwave 0.85s ease-in-out infinite 0.15s; }
+      .animate-wave-3 { animation: soundwave 1.35s ease-in-out infinite 0.3s; }
+      .animate-wave-4 { animation: soundwave 0.95s ease-in-out infinite 0.1s; }
+      .animate-wave-5 { animation: soundwave 1.25s ease-in-out infinite 0.25s; }
+      .animate-wave-6 { animation: soundwave 0.75s ease-in-out infinite 0.4s; }
+
+      /* Matchbox sliding motion */
+      .matchbox-drawer {
+        transition: transform 0.55s cubic-bezier(0.34, 1.4, 0.64, 1);
+      }
+      .matchbox-open .matchbox-drawer {
+        transform: translateX(115px);
+      }
+      @media (max-width: 640px) {
+        .matchbox-open .matchbox-drawer {
+          transform: translateY(85px);
+        }
+      }
+
+      /* Pulse rings */
+      @keyframes pulse-ring {
+        0% { transform: scale(0.95); opacity: 0.8; }
+        50% { transform: scale(1.05); opacity: 0.3; }
+        100% { transform: scale(0.95); opacity: 0.8; }
+      }
+      .animate-pulse-subtle {
+        animation: pulse-ring 4s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body class="bg-cream-100 text-slate-800 font-sans antialiased selection:bg-mint-200 selection:text-mint-900 min-h-screen flex flex-col">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <aside aria-label="Thông tin dự án" class="bg-mint-950 text-mint-100 text-xs py-2 px-4 border-b border-mint-900/60">
+      <div class="max-w-7xl mx-auto flex items-center justify-between gap-2.5 flex-nowrap overflow-hidden">
+        <div class="flex items-center gap-2 truncate">
+          <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-sun-500 text-slate-950 uppercase tracking-wider shrink-0 whitespace-nowrap">
+            KHKT 2024–2025
+          </span>
+          <span class="font-medium text-mint-200 truncate">THPT Lương Thế Vinh • Chuyên đề Sức khỏe tinh thần học đường</span>
+        </div>
+        <div class="hidden sm:flex items-center gap-4 text-[11px] text-mint-300 shrink-0">
+          <span class="flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            100% Client-side
+          </span>
+          <span>•</span>
+          <span>Bảo mật & Ẩn danh</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- STICKY NAVBAR -->
+    <header class="sticky top-0 z-50 bg-cream-100/95 backdrop-blur-md border-b border-cream-200/80 transition-all shadow-sm" id="main-nav">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between">
+        <!-- Logo Brand -->
+        <a href="#hero" class="flex items-center gap-3.5 group focus:outline-none focus:ring-2 focus:ring-mint-600 rounded-xl p-1">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-mint-700 to-mint-900 flex items-center justify-center text-white shadow-md shadow-mint-800/20 group-hover:scale-105 transition-transform">
+            <i data-lucide="smile" class="w-6 h-6 stroke-[2.2]"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-display font-extrabold text-base sm:text-lg tracking-tight text-slate-900 group-hover:text-mint-800 transition-colors">
+                BEHIND THE SMILE
+              </span>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-md bg-mint-100 text-mint-800 border border-mint-200/60 hidden sm:inline-block">
+                LTV
+              </span>
+            </div>
+            <p class="text-xs text-mint-700 font-medium">Nhìn sau nụ cười • THPT Lương Thế Vinh</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Items -->
+        <nav aria-label="Điều hướng trang" class="hidden xl:flex items-center gap-1">
+          <a href="#hero" class="px-3.5 py-2 text-xs font-semibold text-slate-700 hover:text-mint-800 hover:bg-cream-200/70 rounded-xl transition-all">Ý nghĩa</a>
+          <a href="#mat-na" class="px-3.5 py-2 text-xs font-semibold text-slate-700 hover:text-mint-800 hover:bg-cream-200/70 rounded-xl transition-all">Triển lãm Mặt nạ</a>
+          <a href="#soi-chieu" class="px-3.5 py-2 text-xs font-semibold text-slate-700 hover:text-mint-800 hover:bg-cream-200/70 rounded-xl transition-all">Nụ cười 2 lớp</a>
+          <a href="#podcast" class="px-3.5 py-2 text-xs font-semibold text-slate-700 hover:text-mint-800 hover:bg-cream-200/70 rounded-xl transition-all">Podcast 2h sáng</a>
+          <a href="#hop-diem" class="px-3.5 py-2 text-xs font-semibold text-slate-700 hover:text-mint-800 hover:bg-cream-200/70 rounded-xl transition-all">Hộp diêm & Thẻ</a>
+          <a href="#he-sinh-thai" class="px-3.5 py-2 text-xs font-semibold text-slate-700 hover:text-mint-800 hover:bg-cream-200/70 rounded-xl transition-all">Hệ sinh thái SEE–CARE</a>
+          <a href="#cam-nang" class="px-3.5 py-2 text-xs font-semibold text-slate-700 hover:text-mint-800 hover:bg-cream-200/70 rounded-xl transition-all">Cẩm nang hỏi</a>
+        </nav>
+
+        <!-- Right Action Button & Mobile Hamburger -->
+        <div class="flex items-center gap-3">
+          <a
+            href="#hop-diem"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-mint-700 hover:bg-mint-800 text-white text-xs font-semibold shadow-sm transition-all hover:shadow hover:-translate-y-0.5"
+          >
+            <i data-lucide="sparkles" class="w-4 h-4 text-sun-300"></i>
+            <span class="hidden sm:inline">Rút thẻ chữa lành</span>
+            <span class="sm:hidden">Rút thẻ</span>
+          </a>
+
+          <button
+            type="button"
+            id="mobile-menu-btn"
+            aria-label="Mở danh mục điều hướng di động"
+            aria-expanded="false"
+            class="xl:hidden p-2.5 rounded-xl text-slate-700 hover:text-mint-800 hover:bg-cream-200 transition-colors"
+          >
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <nav id="mobile-menu" aria-label="Menu di động" class="hidden xl:hidden border-t border-cream-200 bg-cream-50 px-4 py-4 space-y-1 text-sm shadow-xl">
+        <a href="#hero" class="flex items-center justify-between px-3 py-2.5 rounded-xl font-medium text-slate-800 hover:bg-mint-100 hover:text-mint-900">
+          <span>Ý nghĩa & Thông điệp</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="#mat-na" class="flex items-center justify-between px-3 py-2.5 rounded-xl font-medium text-slate-800 hover:bg-mint-100 hover:text-mint-900">
+          <span>Triển lãm 3D: Mặt nạ nụ cười</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="#soi-chieu" class="flex items-center justify-between px-3 py-2.5 rounded-xl font-medium text-slate-800 hover:bg-mint-100 hover:text-mint-900">
+          <span>Góc tự soi chiếu: Nụ cười 2 lớp</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="#podcast" class="flex items-center justify-between px-3 py-2.5 rounded-xl font-medium text-slate-800 hover:bg-mint-100 hover:text-mint-900">
+          <span>Podcast "Sóng Ngầm": Audio Diary 2h sáng</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="#hop-diem" class="flex items-center justify-between px-3 py-2.5 rounded-xl font-medium text-slate-800 hover:bg-mint-100 hover:text-mint-900">
+          <span>Hộp diêm cảm xúc & Thẻ tín hiệu kín đáo</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="#he-sinh-thai" class="flex items-center justify-between px-3 py-2.5 rounded-xl font-medium text-slate-800 hover:bg-mint-100 hover:text-mint-900">
+          <span>Hệ sinh thái đồng hành: SEE – CHECK – CARE</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+        <a href="#cam-nang" class="flex items-center justify-between px-3 py-2.5 rounded-xl font-medium text-slate-800 hover:bg-mint-100 hover:text-mint-900">
+          <span>Cẩm nang: Một câu hỏi khác đi</span>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-slate-400"></i>
+        </a>
+      </nav>
+    </header>
+
+    <main class="flex-grow">
+      <!-- 1. HERO SECTION: CÂN BẰNG, TINH TẾ, CHỮA LÀNH (KHÔNG HÔ HÀO IN HOA) -->
+      <section id="hero" class="relative pt-10 pb-16 sm:pt-16 sm:pb-24 overflow-hidden border-b border-cream-200/70">
+        <!-- Ambient background soft gradients -->
+        <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-[800px] h-[450px] bg-gradient-to-b from-mint-100/60 via-cream-200/40 to-transparent rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            
+            <!-- Left Column: Emotional & Scientific Narrative -->
+            <div class="lg:col-span-7 text-left">
+              <!-- Research Pill -->
+              <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-mint-200/90 shadow-sm text-mint-900 text-xs font-semibold mb-6">
+                <span class="w-2.5 h-2.5 rounded-full bg-sun-500 animate-ping"></span>
+                <span>Dự án Khoa học Kỹ thuật • Trường THPT Lương Thế Vinh</span>
+              </div>
+
+              <!-- Refined, Human, Emotionally Balanced Headline -->
+              <h1 class="font-display text-3xl sm:text-5xl lg:text-[52px] font-extrabold text-slate-900 leading-[1.2] sm:leading-[1.18] tracking-tight">
+                Nụ cười không phải lúc nào cũng đồng nghĩa với <span class="relative inline-block text-mint-700">“Ổn”</span>
+              </h1>
+
+              <!-- Emotional Subtitle -->
+              <p class="mt-5 text-base sm:text-xl text-slate-600 leading-relaxed font-normal">
+                "Bạn ấy vẫn cười. Vẫn đi học. Vẫn làm bài. Vẫn nói: <span class="font-semibold text-slate-800 italic">‘Tớ ổn.’</span><br class="hidden sm:inline" />
+                Nhưng... bạn đã thật sự hỏi chưa?"
+              </p>
+
+              <!-- Highlight Box: Khoa học & Giáo dục thấu cảm -->
+              <div class="mt-7 bg-white/95 rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-mint-200/90 shadow-soft">
+                <div class="flex items-start gap-4">
+                  <div class="p-2.5 rounded-2xl bg-mint-100 text-mint-800 shrink-0 mt-0.5">
+                    <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <div class="flex items-center gap-2 flex-wrap mb-1.5">
+                      <h2 class="font-display font-bold text-slate-900 text-sm sm:text-base">
+                        Khoảng cách Nụ cười – Cảm xúc (Smile–Feel Gap)
+                      </h2>
+                      <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-mint-100 text-mint-800">
+                        Góc nhìn tâm lý học đường
+                      </span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      Thuật ngữ <strong>"Trầm cảm cười"</strong> không phải là một nhãn bệnh lý để gắn lên bất kỳ ai, mà là khái niệm chỉ 
+                      <strong class="text-mint-800 font-semibold">Khoảng cách Nụ cười – Cảm xúc</strong>: khi học sinh dùng vẻ ngoài hoạt bát, vui vẻ làm lớp phòng vệ tâm lý để che giấu sự quá tải, mệt mỏi và nỗi cô đơn bên trong.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CTA Action Buttons -->
+              <div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+                <a
+                  href="#mat-na"
+                  class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-mint-700 hover:bg-mint-800 text-white font-semibold text-sm shadow-md shadow-mint-800/20 transition-all hover:-translate-y-0.5"
+                >
+                  <span>Khám phá phía sau nụ cười</span>
+                  <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                </a>
+
+                <a
+                  href="#hop-diem"
+                  class="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-white hover:bg-cream-200 text-slate-800 font-semibold text-sm border border-mint-200 shadow-sm transition-all hover:-translate-y-0.5"
+                >
+                  <i data-lucide="sparkles" class="w-4 h-4 text-sun-500"></i>
+                  <span>Mở Hộp diêm cảm xúc</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive Dual Visual "2 Lớp Nụ Cười" -->
+            <div class="lg:col-span-5">
+              <div class="bg-white rounded-3xl p-6 sm:p-7 border border-mint-200/90 shadow-card relative overflow-hidden">
+                <div class="flex items-center justify-between pb-4 border-b border-cream-200">
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-mint-500"></span>
+                    <span class="text-xs font-bold text-slate-800 uppercase tracking-wider">Trải nghiệm tương phản thị giác</span>
+                  </div>
+                  <span class="text-[11px] font-semibold text-mint-700 bg-mint-50 px-2.5 py-0.5 rounded-full border border-mint-200">
+                    Chạm nút để đối chiếu
+                  </span>
+                </div>
+
+                <!-- Dual Visual Card: Layer 1 vs Layer 2 -->
+                <div class="my-5 relative min-h-[260px] rounded-2xl transition-all duration-500 p-6 flex flex-col justify-between" id="hero-interactive-card">
+                  <!-- Front / Layer 1 State -->
+                  <div id="hero-layer-content" class="transition-all duration-300">
+                    <div class="flex items-center justify-between text-xs text-mint-800 font-semibold mb-3">
+                      <span class="px-3 py-1 rounded-full bg-mint-100 border border-mint-200">LỚP 1: Điều bạn bè nhìn thấy</span>
+                      <i data-lucide="sun" class="w-4 h-4 text-sun-500"></i>
+                    </div>
+                    <div class="my-auto py-2">
+                      <div class="w-16 h-16 rounded-2xl bg-mint-100 flex items-center justify-center text-mint-700 mb-3 mx-auto">
+                        <i data-lucide="smile" class="w-9 h-9 stroke-[2.2]"></i>
+                      </div>
+                      <h3 class="font-display font-extrabold text-xl text-center text-slate-900">“Cậu ấy lúc nào cũng vui vẻ!”</h3>
+                      <p class="text-xs text-center text-slate-500 mt-2 leading-relaxed">
+                        Điểm số tốt, luôn xung phong phát biểu, tham gia hoạt động năng nổ, câu cửa miệng: <em>"Mình ổn mà!"</em>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Toggle Switcher -->
+                <div class="grid grid-cols-2 gap-2 p-1.5 rounded-2xl bg-cream-200/80 border border-cream-300">
+                  <button
+                    type="button"
+                    onclick="switchHeroLayer(1)"
+                    id="hero-toggle-btn-1"
+                    class="py-2 px-3 rounded-xl text-xs font-bold transition-all bg-white text-mint-900 shadow-sm"
+                  >
+                    Bên ngoài: Nụ cười
+                  </button>
+                  <button
+                    type="button"
+                    onclick="switchHeroLayer(2)"
+                    id="hero-toggle-btn-2"
+                    class="py-2 px-3 rounded-xl text-xs font-bold transition-all text-slate-600 hover:text-slate-900"
+                  >
+                    Bên trong: Quá tải
+                  </button>
+                </div>
+
+                <div class="mt-4 pt-3 border-t border-cream-200 flex items-center justify-between text-[11px] text-slate-500">
+                  <span>Mô hình thực nghiệm tâm lý LTV</span>
+                  <span class="text-mint-700 font-medium">Bảo mật ẩn danh</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Quick Statistics & School Context Banner -->
+          <div class="mt-12 pt-8 border-t border-cream-300/70 grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="p-4 rounded-2xl bg-white/80 border border-cream-200">
+              <span class="text-xs text-slate-500 font-medium block">Không gian nghiên cứu</span>
+              <span class="text-sm sm:text-base font-bold text-slate-900 mt-0.5 block">THPT Lương Thế Vinh</span>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/80 border border-cream-200">
+              <span class="text-xs text-slate-500 font-medium block">Bảo mật thông tin</span>
+              <span class="text-sm sm:text-base font-bold text-emerald-700 mt-0.5 block">100% Ẩn danh</span>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/80 border border-cream-200">
+              <span class="text-xs text-slate-500 font-medium block">Khung đồng hành</span>
+              <span class="text-sm sm:text-base font-bold text-mint-800 mt-0.5 block">SEE – CHECK – CARE</span>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/80 border border-cream-200">
+              <span class="text-xs text-slate-500 font-medium block">Hỗ trợ khẩn cấp</span>
+              <span class="text-sm sm:text-base font-bold text-sun-600 mt-0.5 block">Tổng đài 111 & 15' Talk</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. TRIỂN LÃM TƯƠNG TÁC 3D: "MẶT NẠ NỤ CƯỜI" -->
+      <section id="mat-na" class="py-16 sm:py-24 bg-cream-50/70 border-b border-cream-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="inline-block text-xs font-bold uppercase tracking-wider text-mint-800 bg-mint-100 border border-mint-200 px-3.5 py-1 rounded-full">
+              Triển lãm thị giác tương tác 3D
+            </span>
+            <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
+              Phía sau những nụ cười đồng loạt
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base mt-2.5 leading-relaxed">
+              Hãy chạm hoặc di chuột vào từng chiếc mặt nạ dưới đây để lật xem những lời tự sự ẩn danh có thật từ học sinh.
+            </p>
+            <div class="mt-3.5 inline-flex items-center gap-2 text-xs text-mint-700 font-medium bg-white px-3 py-1 rounded-full border border-mint-200">
+              <i data-lucide="hand" class="w-3.5 h-3.5"></i>
+              <span>Nhấp hoặc chạm trực tiếp vào thẻ để lật xem mặt sau</span>
+            </div>
+          </div>
+
+          <!-- 4 3D Flip Cards Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
+            <!-- Card 1 -->
+            <div class="flip-card perspective-1000 h-[400px] cursor-pointer group" onclick="toggleFlipCard(this)">
+              <div class="flip-card-inner relative w-full h-full transform-style-3d rounded-3xl shadow-soft group-hover:shadow-hover transition-all">
+                <!-- Front -->
+                <div class="absolute inset-0 backface-hidden bg-white rounded-3xl p-6 flex flex-col justify-between border-2 border-mint-100">
+                  <div class="flex items-center justify-between">
+                    <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-mint-100 text-mint-800">Nữ • Lớp 11</span>
+                    <i data-lucide="rotate-cw" class="w-4 h-4 text-slate-400 group-hover:text-mint-600 transition-colors"></i>
+                  </div>
+                  <div class="text-center my-auto">
+                    <div class="w-20 h-20 mx-auto rounded-2xl bg-mint-50 border border-mint-200 flex items-center justify-center text-mint-700 mb-4 group-hover:scale-105 transition-transform">
+                      <i data-lucide="smile" class="w-10 h-10 stroke-[2]"></i>
+                    </div>
+                    <span class="inline-block px-3 py-0.5 rounded-full bg-sun-100 text-sun-800 text-xs font-bold mb-2">Điểm 9 rạng rỡ</span>
+                    <h3 class="font-display font-bold text-slate-900 text-lg">“Con ngoan, trò giỏi”</h3>
+                    <p class="text-xs text-slate-500 mt-1.5 leading-normal">Luôn là niềm tự hào của cả gia đình và thầy cô bộ môn.</p>
+                  </div>
+                  <div class="pt-3 border-t border-cream-200 text-center text-xs text-mint-700 font-semibold flex items-center justify-center gap-1.5">
+                    <span>Chạm để xem phía sau</span>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                  </div>
+                </div>
+
+                <!-- Back -->
+                <div class="absolute inset-0 backface-hidden rotate-y-180 bg-slate-900 text-slate-100 rounded-3xl p-6 flex flex-col justify-between border-2 border-slate-700 shadow-xl">
+                  <div>
+                    <div class="flex items-center justify-between border-b border-slate-700/80 pb-2.5">
+                      <span class="text-xs uppercase font-bold tracking-wider text-rose-400 flex items-center gap-1.5">
+                        <i data-lucide="alert-circle" class="w-3.5 h-3.5"></i>
+                        <span>Áp lực gia đình</span>
+                      </span>
+                      <i data-lucide="eye-off" class="w-4 h-4 text-slate-400"></i>
+                    </div>
+                    <blockquote class="text-sm text-slate-200 leading-relaxed mt-5 italic border-l-2 border-rose-400 pl-3">
+                      “Mẹ bảo đạt 9 điểm là chưa cố gắng, nhìn con nhà người ta kìa. Mình cười để mẹ không mắng thêm, rồi tối về trùm chăn khóc nghẹn.”
+                    </blockquote>
+                  </div>
+                  <div class="pt-3 border-t border-slate-700/80 flex items-center justify-between text-xs text-slate-400">
+                    <span>Tự sự ẩn danh #01</span>
+                    <span class="text-mint-300 font-medium">Chạm để lật lại</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="flip-card perspective-1000 h-[400px] cursor-pointer group" onclick="toggleFlipCard(this)">
+              <div class="flip-card-inner relative w-full h-full transform-style-3d rounded-3xl shadow-soft group-hover:shadow-hover transition-all">
+                <!-- Front -->
+                <div class="absolute inset-0 backface-hidden bg-white rounded-3xl p-6 flex flex-col justify-between border-2 border-mint-100">
+                  <div class="flex items-center justify-between">
+                    <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-mint-100 text-mint-800">Nam • Lớp 12</span>
+                    <i data-lucide="rotate-cw" class="w-4 h-4 text-slate-400 group-hover:text-mint-600 transition-colors"></i>
+                  </div>
+                  <div class="text-center my-auto">
+                    <div class="w-20 h-20 mx-auto rounded-2xl bg-sun-50 border border-sun-200 flex items-center justify-center text-sun-600 mb-4 group-hover:scale-105 transition-transform">
+                      <i data-lucide="laugh" class="w-10 h-10 stroke-[2]"></i>
+                    </div>
+                    <span class="inline-block px-3 py-0.5 rounded-full bg-mint-100 text-mint-800 text-xs font-bold mb-2">Cây hài của lớp</span>
+                    <h3 class="font-display font-bold text-slate-900 text-lg">“Lớp trưởng năng nổ”</h3>
+                    <p class="text-xs text-slate-500 mt-1.5 leading-normal">Chỗ dựa tinh thần và luôn là người pha trò làm cả lớp cười.</p>
+                  </div>
+                  <div class="pt-3 border-t border-cream-200 text-center text-xs text-mint-700 font-semibold flex items-center justify-center gap-1.5">
+                    <span>Chạm để xem phía sau</span>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                  </div>
+                </div>
+
+                <!-- Back -->
+                <div class="absolute inset-0 backface-hidden rotate-y-180 bg-slate-900 text-slate-100 rounded-3xl p-6 flex flex-col justify-between border-2 border-slate-700 shadow-xl">
+                  <div>
+                    <div class="flex items-center justify-between border-b border-slate-700/80 pb-2.5">
+                      <span class="text-xs uppercase font-bold tracking-wider text-amber-400 flex items-center gap-1.5">
+                        <i data-lucide="alert-circle" class="w-3.5 h-3.5"></i>
+                        <span>Áp lực đồng trang lứa</span>
+                      </span>
+                      <i data-lucide="eye-off" class="w-4 h-4 text-slate-400"></i>
+                    </div>
+                    <blockquote class="text-sm text-slate-200 leading-relaxed mt-5 italic border-l-2 border-amber-400 pl-3">
+                      “Là lớp trưởng, mình luôn phải năng nổ, là chỗ dựa cho cả lớp. Đâu ai biết lúc mình pha trò cho các bạn cười cũng là lúc mình muốn biến mất nhất.”
+                    </blockquote>
+                  </div>
+                  <div class="pt-3 border-t border-slate-700/80 flex items-center justify-between text-xs text-slate-400">
+                    <span>Tự sự ẩn danh #02</span>
+                    <span class="text-mint-300 font-medium">Chạm để lật lại</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="flip-card perspective-1000 h-[400px] cursor-pointer group" onclick="toggleFlipCard(this)">
+              <div class="flip-card-inner relative w-full h-full transform-style-3d rounded-3xl shadow-soft group-hover:shadow-hover transition-all">
+                <!-- Front -->
+                <div class="absolute inset-0 backface-hidden bg-white rounded-3xl p-6 flex flex-col justify-between border-2 border-mint-100">
+                  <div class="flex items-center justify-between">
+                    <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-mint-100 text-mint-800">Nữ • Lớp 10</span>
+                    <i data-lucide="rotate-cw" class="w-4 h-4 text-slate-400 group-hover:text-mint-600 transition-colors"></i>
+                  </div>
+                  <div class="text-center my-auto">
+                    <div class="w-20 h-20 mx-auto rounded-2xl bg-mint-50 border border-mint-200 flex items-center justify-center text-mint-700 mb-4 group-hover:scale-105 transition-transform">
+                      <i data-lucide="heart" class="w-10 h-10 stroke-[2]"></i>
+                    </div>
+                    <span class="inline-block px-3 py-0.5 rounded-full bg-blue-50 text-blue-700 text-xs font-bold mb-2">Luôn nói “Không sao”</span>
+                    <h3 class="font-display font-bold text-slate-900 text-lg">“Cô bạn lạc quan”</h3>
+                    <p class="text-xs text-slate-500 mt-1.5 leading-normal">Người luôn lắng nghe và an ủi mọi người trong lớp.</p>
+                  </div>
+                  <div class="pt-3 border-t border-cream-200 text-center text-xs text-mint-700 font-semibold flex items-center justify-center gap-1.5">
+                    <span>Chạm để xem phía sau</span>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                  </div>
+                </div>
+
+                <!-- Back -->
+                <div class="absolute inset-0 backface-hidden rotate-y-180 bg-slate-900 text-slate-100 rounded-3xl p-6 flex flex-col justify-between border-2 border-slate-700 shadow-xl">
+                  <div>
+                    <div class="flex items-center justify-between border-b border-slate-700/80 pb-2.5">
+                      <span class="text-xs uppercase font-bold tracking-wider text-sky-400 flex items-center gap-1.5">
+                        <i data-lucide="alert-circle" class="w-3.5 h-3.5"></i>
+                        <span>Sự trống rỗng bên trong</span>
+                      </span>
+                      <i data-lucide="eye-off" class="w-4 h-4 text-slate-400"></i>
+                    </div>
+                    <blockquote class="text-sm text-slate-200 leading-relaxed mt-5 italic border-l-2 border-sky-400 pl-3">
+                      “Mọi người khen mình lạc quan, yêu đời. Thật ra mình mất khả năng khóc rồi, chỉ biết cười trừ để che đi sự trống rỗng bên trong.”
+                    </blockquote>
+                  </div>
+                  <div class="pt-3 border-t border-slate-700/80 flex items-center justify-between text-xs text-slate-400">
+                    <span>Tự sự ẩn danh #03</span>
+                    <span class="text-mint-300 font-medium">Chạm để lật lại</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="flip-card perspective-1000 h-[400px] cursor-pointer group" onclick="toggleFlipCard(this)">
+              <div class="flip-card-inner relative w-full h-full transform-style-3d rounded-3xl shadow-soft group-hover:shadow-hover transition-all">
+                <!-- Front -->
+                <div class="absolute inset-0 backface-hidden bg-white rounded-3xl p-6 flex flex-col justify-between border-2 border-mint-100">
+                  <div class="flex items-center justify-between">
+                    <span class="px-2.5 py-1 rounded-full text-xs font-bold bg-mint-100 text-mint-800">Nam • Lớp 11</span>
+                    <i data-lucide="rotate-cw" class="w-4 h-4 text-slate-400 group-hover:text-mint-600 transition-colors"></i>
+                  </div>
+                  <div class="text-center my-auto">
+                    <div class="w-20 h-20 mx-auto rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-700 mb-4 group-hover:scale-105 transition-transform">
+                      <i data-lucide="sparkles" class="w-10 h-10 stroke-[2]"></i>
+                    </div>
+                    <span class="inline-block px-3 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold mb-2">Luôn toe toét cười</span>
+                    <h3 class="font-display font-bold text-slate-900 text-lg">“Thành viên tích cực”</h3>
+                    <p class="text-xs text-slate-500 mt-1.5 leading-normal">Có mặt đầy đủ trong mọi hoạt động câu lạc bộ và phong trào.</p>
+                  </div>
+                  <div class="pt-3 border-t border-cream-200 text-center text-xs text-mint-700 font-semibold flex items-center justify-center gap-1.5">
+                    <span>Chạm để xem phía sau</span>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                  </div>
+                </div>
+
+                <!-- Back -->
+                <div class="absolute inset-0 backface-hidden rotate-y-180 bg-slate-900 text-slate-100 rounded-3xl p-6 flex flex-col justify-between border-2 border-slate-700 shadow-xl">
+                  <div>
+                    <div class="flex items-center justify-between border-b border-slate-700/80 pb-2.5">
+                      <span class="text-xs uppercase font-bold tracking-wider text-rose-300 flex items-center gap-1.5">
+                        <i data-lucide="alert-circle" class="w-3.5 h-3.5"></i>
+                        <span>Nỗi sợ bị phán xét</span>
+                      </span>
+                      <i data-lucide="eye-off" class="w-4 h-4 text-slate-400"></i>
+                    </div>
+                    <blockquote class="text-sm text-slate-200 leading-relaxed mt-5 italic border-l-2 border-rose-300 pl-3">
+                      “Ở trường, nếu bạn buồn, người ta nói bạn ‘làm màu’. Thà cứ toe toét cười, dù bên trong đã nát vụn, còn hơn trở thành chủ đề bàn tán.”
+                    </blockquote>
+                  </div>
+                  <div class="pt-3 border-t border-slate-700/80 flex items-center justify-between text-xs text-slate-400">
+                    <span>Tự sự ẩn danh #04</span>
+                    <span class="text-mint-300 font-medium">Chạm để lật lại</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flip Controls -->
+          <div class="mt-10 flex justify-center">
+            <button
+              type="button"
+              onclick="toggleAllCards()"
+              id="flip-all-btn"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-mint-300 text-mint-800 hover:bg-mint-50 text-xs font-bold shadow-sm transition-all hover:shadow"
+            >
+              <i data-lucide="refresh-cw" class="w-4 h-4"></i>
+              <span>Lật xem tất cả mặt nạ</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. GÓC TỰ SOI CHIẾU: "NỤ CƯỜI 2 LỚP" -->
+      <section id="soi-chieu" class="py-16 sm:py-24 bg-white border-b border-cream-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="inline-block text-xs font-bold uppercase tracking-wider text-mint-800 bg-mint-100 border border-mint-200 px-3.5 py-1 rounded-full">
+              Góc tự soi chiếu cá nhân
+            </span>
+            <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
+              Mô phỏng "Nụ cười 2 lớp"
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base mt-2.5 leading-relaxed">
+              Tích chọn những điều đúng với bạn để lắng nghe thông điệp thấu cảm từ thanh đo khoảng cách cảm xúc.
+            </p>
+            <div class="mt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-amber-900 text-xs font-medium border border-amber-200">
+              <i data-lucide="shield-check" class="w-4 h-4 text-amber-600 shrink-0"></i>
+              <span>Trải nghiệm 100% Client-side – Không lưu hay thu thập bất kỳ dữ liệu cá nhân nào.</span>
+            </div>
+          </div>
+
+          <!-- Simulator 2 Columns -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+            <!-- Column A -->
+            <div class="bg-cream-50/80 border-2 border-mint-200/80 rounded-3xl p-6 sm:p-7 shadow-sm">
+              <div class="flex items-center justify-between pb-4 border-b border-mint-200 mb-5">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-xl bg-mint-700 text-white flex items-center justify-center font-extrabold text-sm shadow-sm">
+                    A
+                  </div>
+                  <div>
+                    <h3 class="font-display font-bold text-slate-900 text-base">LỚP 1: Người khác nhìn thấy ở bạn</h3>
+                    <p class="text-xs text-slate-500">Vẻ ngoài hoạt bát bạn thường thể hiện khi đến trường</p>
+                  </div>
+                </div>
+                <span id="col-a-count" class="font-mono font-bold text-xs px-2.5 py-1 rounded-lg bg-mint-100 text-mint-800">
+                  0/4
+                </span>
+              </div>
+
+              <div class="space-y-3">
+                <label class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-cream-300 hover:border-mint-400 cursor-pointer transition-all has-[:checked]:border-mint-600 has-[:checked]:bg-mint-50/60 shadow-sm">
+                  <input type="checkbox" class="col-a-check mt-1 w-4 h-4 rounded text-mint-700 focus:ring-mint-500 border-slate-300" onchange="calculateGap()" />
+                  <span class="text-sm text-slate-700 leading-snug">Bạn bè thường nghĩ mình là người vui vẻ, tích cực.</span>
+                </label>
+
+                <label class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-cream-300 hover:border-mint-400 cursor-pointer transition-all has-[:checked]:border-mint-600 has-[:checked]:bg-mint-50/60 shadow-sm">
+                  <input type="checkbox" class="col-a-check mt-1 w-4 h-4 rounded text-mint-700 focus:ring-mint-500 border-slate-300" onchange="calculateGap()" />
+                  <span class="text-sm text-slate-700 leading-snug">Mình vẫn tham gia đầy đủ các hoạt động của lớp.</span>
+                </label>
+
+                <label class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-cream-300 hover:border-mint-400 cursor-pointer transition-all has-[:checked]:border-mint-600 has-[:checked]:bg-mint-50/60 shadow-sm">
+                  <input type="checkbox" class="col-a-check mt-1 w-4 h-4 rounded text-mint-700 focus:ring-mint-500 border-slate-300" onchange="calculateGap()" />
+                  <span class="text-sm text-slate-700 leading-snug">Câu cửa miệng của mình là “Mình ổn / Không sao đâu”.</span>
+                </label>
+
+                <label class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-cream-300 hover:border-mint-400 cursor-pointer transition-all has-[:checked]:border-mint-600 has-[:checked]:bg-mint-50/60 shadow-sm">
+                  <input type="checkbox" class="col-a-check mt-1 w-4 h-4 rounded text-mint-700 focus:ring-mint-500 border-slate-300" onchange="calculateGap()" />
+                  <span class="text-sm text-slate-700 leading-snug">Mình vẫn cười nói bình thường mỗi ngày đến trường.</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Column B -->
+            <div class="bg-cream-50/80 border-2 border-sun-200/80 rounded-3xl p-6 sm:p-7 shadow-sm">
+              <div class="flex items-center justify-between pb-4 border-b border-sun-200 mb-5">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-xl bg-sun-500 text-white flex items-center justify-center font-extrabold text-sm shadow-sm">
+                    B
+                  </div>
+                  <div>
+                    <h3 class="font-display font-bold text-slate-900 text-base">LỚP 2: Thực sự đang diễn ra bên trong</h3>
+                    <p class="text-xs text-slate-500">Cảm giác thầm kín khi bạn chỉ có một mình</p>
+                  </div>
+                </div>
+                <span id="col-b-count" class="font-mono font-bold text-xs px-2.5 py-1 rounded-lg bg-sun-100 text-sun-800">
+                  0/4
+                </span>
+              </div>
+
+              <div class="space-y-3">
+                <label class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-cream-300 hover:border-sun-400 cursor-pointer transition-all has-[:checked]:border-sun-600 has-[:checked]:bg-sun-50/60 shadow-sm">
+                  <input type="checkbox" class="col-b-check mt-1 w-4 h-4 rounded text-sun-600 focus:ring-sun-500 border-slate-300" onchange="calculateGap()" />
+                  <span class="text-sm text-slate-700 leading-snug">Mình thường cảm thấy kiệt sức dù vẫn sinh hoạt bình thường.</span>
+                </label>
+
+                <label class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-cream-300 hover:border-sun-400 cursor-pointer transition-all has-[:checked]:border-sun-600 has-[:checked]:bg-sun-50/60 shadow-sm">
+                  <input type="checkbox" class="col-b-check mt-1 w-4 h-4 rounded text-sun-600 focus:ring-sun-500 border-slate-300" onchange="calculateGap()" />
+                  <span class="text-sm text-slate-700 leading-snug">Mình cảm thấy phải cố tỏ ra ổn để người khác không lo lắng.</span>
+                </label>
+
+                <label class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-cream-300 hover:border-sun-400 cursor-pointer transition-all has-[:checked]:border-sun-600 has-[:checked]:bg-sun-50/60 shadow-sm">
+                  <input type="checkbox" class="col-b-check mt-1 w-4 h-4 rounded text-sun-600 focus:ring-sun-500 border-slate-300" onchange="calculateGap()" />
+                  <span class="text-sm text-slate-700 leading-snug">Mình rất khó chia sẻ những điều đang đè nặng trong lòng.</span>
+                </label>
+
+                <label class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white border border-cream-300 hover:border-sun-400 cursor-pointer transition-all has-[:checked]:border-sun-600 has-[:checked]:bg-sun-50/60 shadow-sm">
+                  <input type="checkbox" class="col-b-check mt-1 w-4 h-4 rounded text-sun-600 focus:ring-sun-500 border-slate-300" onchange="calculateGap()" />
+                  <span class="text-sm text-slate-700 leading-snug">Có những lúc mình muốn được ai đó hỏi han nhưng không biết bắt đầu thế nào.</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Result & Empathy Meter -->
+          <div class="mt-8 bg-gradient-to-br from-mint-50/80 via-white to-sun-50/80 border border-mint-200 rounded-3xl p-6 sm:p-8 shadow-card">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
+              <div>
+                <span class="text-[11px] font-bold uppercase tracking-wider text-mint-800">Kết quả tự soi chiếu trực quan</span>
+                <h3 class="font-display font-extrabold text-slate-900 text-lg sm:text-xl mt-0.5">
+                  Khoảng cách Cảm xúc (Smile–Feel Gap): <span id="gap-level-text" class="text-mint-700">Chờ bạn tích chọn</span>
+                </h3>
+              </div>
+              <button
+                type="button"
+                onclick="resetSimulator()"
+                class="px-4 py-2 rounded-xl bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 text-xs font-semibold shadow-sm transition-all"
+              >
+                Đặt lại từ đầu
+              </button>
+            </div>
+
+            <!-- Dynamic Gauge Bar -->
+            <div class="w-full bg-slate-200 h-3.5 rounded-full overflow-hidden p-0.5 relative">
+              <div
+                id="gap-progress-bar"
+                class="h-full bg-gradient-to-r from-mint-500 via-sun-400 to-rose-500 rounded-full transition-all duration-500"
+                style="width: 10%"
+              ></div>
+            </div>
+
+            <!-- Personalized Loving Empathy Card -->
+            <div id="gap-message-box" class="mt-5 p-5 bg-white rounded-2xl border border-mint-200/80 flex items-start gap-4 shadow-sm">
+              <div class="p-2.5 rounded-2xl bg-mint-100 text-mint-800 shrink-0">
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+              </div>
+              <div class="text-sm text-slate-700 leading-relaxed" id="gap-message-content">
+                Hãy tích vào những tiêu chí bạn cảm thấy quen thuộc ở 2 cột bên trên. Hệ thống sẽ đo lường mức độ chênh lệch giữa điều bạn thể hiện và điều bạn đang chịu đựng một mình.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. GÓC THÍNH GIÁC: PODCAST "SÓNG NGẦM" -->
+      <section id="podcast" class="py-16 sm:py-24 bg-mint-950 text-slate-100 border-b border-mint-900 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="inline-block text-xs font-bold uppercase tracking-wider text-sun-300 bg-mint-900/90 border border-mint-700 px-3.5 py-1 rounded-full">
+              Góc thính giác • Audio Diary
+            </span>
+            <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-white mt-3 tracking-tight">
+              Podcast "Sóng Ngầm"
+            </h2>
+            <p class="text-mint-200 text-sm sm:text-base mt-2.5">
+              Lắng nghe một khoảng lặng chân thật khi chiếc mặt nạ được tháo xuống trong đêm.
+            </p>
+          </div>
+
+          <!-- Modern Studio Audio Player -->
+          <div class="bg-mint-900/90 border border-mint-800 rounded-3xl p-6 sm:p-8 backdrop-blur-xl shadow-2xl">
+            <div class="flex flex-col md:flex-row items-center gap-7">
+              <!-- Podcast Art -->
+              <div class="relative w-44 h-44 sm:w-48 sm:h-48 rounded-2xl bg-gradient-to-br from-mint-800 via-mint-950 to-slate-950 p-4 shrink-0 shadow-xl border border-mint-700/60 flex flex-col items-center justify-between text-center">
+                <div class="w-16 h-16 rounded-full bg-mint-700/40 border border-mint-600/40 flex items-center justify-center text-sun-300 my-auto">
+                  <i data-lucide="headphones" class="w-8 h-8"></i>
+                </div>
+                <div>
+                  <span class="text-[10px] font-bold uppercase tracking-widest text-mint-300 block">Sóng Ngầm #01</span>
+                  <span class="text-xs font-extrabold text-white">2:00 AM Diary</span>
+                </div>
+                <div class="absolute bottom-2.5 right-2.5 text-[10px] bg-black/60 px-2 py-0.5 rounded-md text-mint-200 font-mono">
+                  02:30
+                </div>
+              </div>
+
+              <!-- Controls & Info -->
+              <div class="w-full">
+                <div class="flex items-center gap-2 text-xs font-semibold text-sun-300 mb-1">
+                  <span class="w-2 h-2 rounded-full bg-sun-400 animate-pulse"></span>
+                  <span>Chuỗi Audio Diary: Sau lớp vỏ bọc hoàn hảo</span>
+                </div>
+                <h3 class="font-display font-extrabold text-xl sm:text-2xl text-white">
+                  Tập 01: “Lời tự sự lúc 2 giờ sáng”
+                </h3>
+                <p class="text-xs sm:text-sm text-mint-200/80 mt-1">
+                  Dành cho những bạn học sinh đã gồng mình suốt một ngày dài ở trường...
+                </p>
+
+                <!-- Soundwave Visualizer -->
+                <div id="soundwave-container" class="flex items-center gap-1.5 h-10 mt-5 opacity-40 transition-opacity">
+                  <span class="w-1.5 bg-mint-400 rounded-full h-2 animate-wave-1"></span>
+                  <span class="w-1.5 bg-sun-400 rounded-full h-3 animate-wave-2"></span>
+                  <span class="w-1.5 bg-mint-300 rounded-full h-6 animate-wave-3"></span>
+                  <span class="w-1.5 bg-mint-200 rounded-full h-4 animate-wave-4"></span>
+                  <span class="w-1.5 bg-sun-300 rounded-full h-7 animate-wave-5"></span>
+                  <span class="w-1.5 bg-mint-400 rounded-full h-3 animate-wave-6"></span>
+                  <span class="w-1.5 bg-mint-300 rounded-full h-5 animate-wave-2"></span>
+                  <span class="w-1.5 bg-sun-400 rounded-full h-7 animate-wave-4"></span>
+                  <span class="w-1.5 bg-mint-400 rounded-full h-4 animate-wave-1"></span>
+                  <span class="w-1.5 bg-mint-200 rounded-full h-2 animate-wave-3"></span>
+                  <span class="w-1.5 bg-sun-300 rounded-full h-6 animate-wave-5"></span>
+                  <span class="w-1.5 bg-mint-400 rounded-full h-3 animate-wave-2"></span>
+                </div>
+
+                <!-- Scrubber -->
+                <div class="mt-3">
+                  <input
+                    type="range"
+                    id="audio-scrubber"
+                    min="0"
+                    max="150"
+                    value="0"
+                    aria-label="Thanh thời gian phát Podcast"
+                    class="w-full h-2 bg-mint-950 rounded-lg appearance-none cursor-pointer accent-sun-400"
+                    oninput="seekAudio(this.value)"
+                  />
+                  <div class="flex justify-between text-[11px] font-mono text-mint-300 mt-1">
+                    <span id="current-time">00:00</span>
+                    <span>02:30</span>
+                  </div>
+                </div>
+
+                <!-- Player Buttons -->
+                <div class="flex items-center justify-between mt-4 flex-wrap gap-3">
+                  <div class="flex items-center gap-3">
+                    <button
+                      type="button"
+                      onclick="skipAudio(-15)"
+                      aria-label="Tua lùi 15 giây"
+                      class="p-2.5 rounded-xl text-mint-200 hover:text-white hover:bg-mint-800 transition-colors"
+                      title="Lùi 15s"
+                    >
+                      <i data-lucide="rotate-ccw" class="w-5 h-5"></i>
+                    </button>
+
+                    <button
+                      type="button"
+                      id="play-btn"
+                      onclick="toggleAudioPlay()"
+                      aria-label="Phát hoặc tạm dừng âm thanh"
+                      class="w-12 h-12 rounded-full bg-sun-500 hover:bg-sun-400 text-slate-950 flex items-center justify-center font-bold shadow-lg shadow-sun-500/30 hover:scale-105 active:scale-95 transition-all"
+                    >
+                      <i data-lucide="play" id="play-icon" class="w-6 h-6 fill-current ml-0.5"></i>
+                    </button>
+
+                    <button
+                      type="button"
+                      onclick="skipAudio(15)"
+                      aria-label="Tua tới 15 giây"
+                      class="p-2.5 rounded-xl text-mint-200 hover:text-white hover:bg-mint-800 transition-colors"
+                      title="Tới 15s"
+                    >
+                      <i data-lucide="rotate-cw" class="w-5 h-5"></i>
+                    </button>
+
+                    <span id="audio-status-badge" class="text-xs text-mint-300 ml-1 hidden sm:inline">
+                      Bấm Play để nghe âm thanh dịu lành
+                    </span>
+                  </div>
+
+                  <!-- Transcript toggle button -->
+                  <button
+                    type="button"
+                    onclick="toggleTranscript()"
+                    id="transcript-toggle-btn"
+                    class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-mint-800 hover:bg-mint-700 text-mint-100 text-xs font-semibold border border-mint-700 transition-colors"
+                  >
+                    <i data-lucide="file-text" class="w-4 h-4"></i>
+                    <span id="transcript-btn-text">Đọc kịch bản lời thoại</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Synchronized Transcript -->
+            <div id="transcript-drawer" class="mt-6 pt-6 border-t border-mint-800">
+              <div class="flex items-center justify-between mb-4">
+                <h4 class="font-display font-bold text-sm text-sun-300 flex items-center gap-2">
+                  <i data-lucide="quote" class="w-4 h-4"></i>
+                  <span>Kịch bản chi tiết theo mốc thời gian</span>
+                </h4>
+                <span class="text-xs text-mint-300">Nhấp vào mốc giờ để chuyển đoạn nghe</span>
+              </div>
+
+              <div class="space-y-3 font-sans text-xs sm:text-sm">
+                <!-- Segment 1 -->
+                <div
+                  id="segment-1"
+                  onclick="jumpToTime(0)"
+                  class="transcript-segment p-3.5 rounded-2xl bg-mint-950/60 hover:bg-mint-800/60 cursor-pointer border border-transparent transition-all"
+                >
+                  <div class="flex items-center gap-2 text-sun-300 font-mono text-xs font-bold mb-1">
+                    <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+                    <span>[00:00 - 00:15]</span>
+                    <span class="font-sans font-normal text-mint-300 text-[11px]">• Lời chào mở đầu</span>
+                  </div>
+                  <p class="text-mint-100 italic leading-relaxed">
+                    “Xin chào... Chào mừng bạn đến với Sóng Ngầm – không gian ẩn danh của những nụ cười mệt mỏi tại trường...”
+                  </p>
+                </div>
+
+                <!-- Segment 2 -->
+                <div
+                  id="segment-2"
+                  onclick="jumpToTime(15)"
+                  class="transcript-segment p-3.5 rounded-2xl bg-mint-950/60 hover:bg-mint-800/60 cursor-pointer border border-transparent transition-all"
+                >
+                  <div class="flex items-center gap-2 text-sun-300 font-mono text-xs font-bold mb-1">
+                    <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+                    <span>[00:15 - 01:15]</span>
+                    <span class="font-sans font-normal text-mint-300 text-[11px]">• Tháo chiếc mặt nạ sau một ngày dài</span>
+                  </div>
+                  <p class="text-mint-100 italic leading-relaxed">
+                    “2 giờ sáng. Khi cả thị xã đã đi ngủ, mình mới dám cởi bỏ chiếc mặt nạ ‘học sinh giỏi toàn diện’ ra. Ban ngày, mình là đứa nói nhiều nhất lớp, là người luôn cười khi thầy cô gọi bài. Ai cũng nghĩ mình hạnh phúc. Nhưng không ai biết, mỗi buổi sáng bước qua cổng trường, mình phải gồng lên như một diễn viên chuẩn bị bước lên sân khấu. Mình sợ sự im lặng, sợ những khoảng trống, vì lúc đó sự cô độc sẽ nuốt chửng lấy mình. Nụ cười của mình... không phải vì mình vui, mà là vì mình không muốn ai hỏi: ‘Dạo này mày bị làm sao thế?’.”
+                  </p>
+                </div>
+
+                <!-- Segment 3 -->
+                <div
+                  id="segment-3"
+                  onclick="jumpToTime(75)"
+                  class="transcript-segment p-3.5 rounded-2xl bg-mint-950/60 hover:bg-mint-800/60 cursor-pointer border border-transparent transition-all"
+                >
+                  <div class="flex items-center gap-2 text-sun-300 font-mono text-xs font-bold mb-1">
+                    <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+                    <span>[01:15 - 02:00]</span>
+                    <span class="font-sans font-normal text-mint-300 text-[11px]">• Lời gửi gắm đồng cảm</span>
+                  </div>
+                  <p class="text-mint-100 italic leading-relaxed">
+                    “Có bạn nào đang nghe Podcast này cũng giống mình không? Kiệt sức sau một ngày dài đóng vai một người hoàn hảo. Mình chỉ muốn nói là... bạn không cô đơn đâu. Và nụ cười đó, nếu mệt quá, cứ hạ xuống đi.”
+                  </p>
+                </div>
+
+                <!-- Segment 4 -->
+                <div
+                  id="segment-4"
+                  onclick="jumpToTime(120)"
+                  class="transcript-segment p-3.5 rounded-2xl bg-mint-950/60 hover:bg-mint-800/60 cursor-pointer border border-transparent transition-all"
+                >
+                  <div class="flex items-center gap-2 text-sun-300 font-mono text-xs font-bold mb-1">
+                    <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+                    <span>[02:00 - 02:30]</span>
+                    <span class="font-sans font-normal text-mint-300 text-[11px]">• Khoảng thở bình yên</span>
+                  </div>
+                  <p class="text-mint-100 italic leading-relaxed">
+                    “Hít một hơi thật sâu nào. Tối nay, hãy cho đôi vai của bạn được thả lỏng. Trường THPT Lương Thế Vinh luôn có những người sẵn sàng lắng nghe bạn, bất kể bạn có đang tỏa sáng hay không.”
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. HỘP DIÊM CẢM XÚC & BỘ THẺ KÍN ĐÁO -->
+      <section id="hop-diem" class="py-16 sm:py-24 bg-cream-100 border-b border-cream-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="inline-block text-xs font-bold uppercase tracking-wider text-mint-800 bg-mint-100 border border-mint-200 px-3.5 py-1 rounded-full">
+              Trải nghiệm chữa lành bỏ túi
+            </span>
+            <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
+              Hộp diêm cảm xúc & Thẻ hỗ trợ
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base mt-2.5 leading-relaxed">
+              Vật phẩm hữu hình giúp học sinh tự vỗ về bản thân hoặc phát tín hiệu kín đáo tới giáo viên.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            <!-- KHU VỰC A: MÔ PHỎNG HỘP DIÊM CẢM XÚC -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-mint-200 shadow-card flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between pb-3.5 border-b border-cream-200 mb-6">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-xl bg-mint-100 text-mint-800 flex items-center justify-center">
+                      <i data-lucide="box" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                      <h3 class="font-display font-bold text-slate-900 text-base">Khu vực A: “Hộp diêm cảm xúc”</h3>
+                      <p class="text-xs text-slate-500">The Matchbox Kit bỏ túi</p>
+                    </div>
+                  </div>
+                  <span class="px-2.5 py-1 rounded-full bg-sun-100 text-sun-900 text-xs font-bold">Kéo trượt mở</span>
+                </div>
+
+                <!-- Matchbox visual simulation -->
+                <div class="relative py-4 my-2 flex flex-col items-center justify-center">
+                  <div id="matchbox-container" class="relative w-64 sm:w-72 h-36 bg-amber-900 rounded-2xl p-2 shadow-xl border-2 border-amber-950 flex items-center transition-all duration-500">
+                    <!-- Friction strip -->
+                    <div class="absolute -left-2 top-4 bottom-4 w-2 bg-gradient-to-b from-stone-600 via-stone-700 to-stone-800 rounded-l-sm border-r border-stone-900"></div>
+
+                    <!-- Outer Sleeve -->
+                    <div class="relative z-20 w-full h-full bg-gradient-to-br from-mint-700 to-mint-900 rounded-xl p-4 text-white flex flex-col justify-between shadow-md border border-mint-600">
+                      <div class="flex items-center justify-between">
+                        <span class="text-[10px] tracking-wider uppercase font-bold text-mint-200">THPT Lương Thế Vinh</span>
+                        <i data-lucide="flame" class="w-4 h-4 text-sun-400"></i>
+                      </div>
+                      <div class="text-center">
+                        <span class="text-xs uppercase font-extrabold tracking-wider text-sun-300 block">Hộp diêm cảm xúc</span>
+                        <p class="italic text-xs text-mint-100 mt-1">“Mở ra khi bạn thấy... ‘VẪN ỔN’”</p>
+                      </div>
+                      <div class="text-[10px] text-center text-mint-300 flex items-center justify-center gap-1">
+                        <span>Click nút để kéo ngăn rút thẻ</span>
+                        <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                      </div>
+                    </div>
+
+                    <!-- Inner Sliding Drawer -->
+                    <div id="matchbox-tray" class="matchbox-drawer absolute left-2 top-2 bottom-2 right-2 bg-mint-100 rounded-xl p-3 border-2 border-mint-300 flex items-center justify-between text-mint-900 shadow-inner z-10">
+                      <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-12 bg-amber-700 rounded-full border border-amber-900 flex flex-col items-center">
+                          <span class="w-3.5 h-3.5 -mt-1 bg-red-600 rounded-full shadow-md shadow-red-500/80"></span>
+                        </span>
+                        <span class="text-xs font-bold text-mint-900">Thẻ số <span id="card-index-indicator">1</span></span>
+                      </div>
+                      <i data-lucide="sparkles" class="w-4 h-4 text-sun-500"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Matchbox Action Buttons -->
+                <div class="mt-6 flex flex-wrap items-center justify-center gap-2.5">
+                  <button
+                    type="button"
+                    onclick="openMatchboxCard()"
+                    id="matchbox-btn"
+                    class="px-5 py-2.5 rounded-2xl bg-mint-700 hover:bg-mint-800 text-white text-xs sm:text-sm font-bold shadow-md transition-all flex items-center gap-2"
+                  >
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    <span>Kéo hộp diêm (Rút thẻ chữa lành)</span>
+                  </button>
+                  <button
+                    type="button"
+                    onclick="nextHealingCard()"
+                    class="px-4 py-2.5 rounded-2xl bg-cream-200 hover:bg-cream-300 text-slate-800 text-xs font-bold transition-colors flex items-center gap-1.5"
+                    title="Đổi thẻ tiếp theo"
+                  >
+                    <i data-lucide="shuffle" class="w-4 h-4"></i>
+                    <span>Thẻ tiếp theo</span>
+                  </button>
+                </div>
+
+                <!-- Card Content Display -->
+                <div id="healing-card-display" class="mt-6 p-5 sm:p-6 rounded-2xl bg-mint-50/80 border-2 border-mint-200 text-slate-800 shadow-sm transition-all duration-300">
+                  <div class="flex items-center justify-between pb-2.5 border-b border-mint-200 text-xs font-semibold text-mint-900">
+                    <span id="healing-card-tag" class="px-2.5 py-0.5 rounded-full bg-mint-200 text-mint-900 font-bold">
+                      Thẻ 1: Bật đèn xanh cho nước mắt
+                    </span>
+                    <span id="healing-card-title" class="italic text-slate-700 font-semibold">“Được phép không ổn”</span>
+                  </div>
+                  <p id="healing-card-body" class="mt-3.5 text-xs sm:text-sm text-slate-700 leading-relaxed font-normal">
+                    “Gửi bạn, người đã cười rất nhiều ngày hôm nay. Nước mắt không phải là sự yếu đuối, nó là cơ chế tự làm sạch của tâm hồn. Tối nay, khi ở một mình, bạn không cần phải mạnh mẽ nữa. Khóc một chút cũng được, đóng cửa lại và là chính mình nhé.”
+                  </p>
+                </div>
+              </div>
+
+              <div class="mt-4 pt-3 border-t border-cream-200 flex items-center justify-between text-xs text-slate-500">
+                <span>Vật phẩm KHKT học đường</span>
+                <span class="text-mint-700 font-medium">Bản quyền THPT Lương Thế Vinh</span>
+              </div>
+            </div>
+
+            <!-- KHU VỰC B: BỘ THẺ VẬT LÝ KÍN ĐÁO -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 border border-mint-200 shadow-card flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between pb-3.5 border-b border-cream-200 mb-6">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-xl bg-sun-100 text-sun-900 flex items-center justify-center">
+                      <i data-lucide="tag" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                      <h3 class="font-display font-bold text-slate-900 text-base">Khu vực B: Bộ thẻ “MÌNH CẦN MỘT CHÚT...”</h3>
+                      <p class="text-xs text-slate-500">Dành cho học sinh ngại nói trực tiếp với giáo viên</p>
+                    </div>
+                  </div>
+                  <span class="px-2.5 py-1 rounded-full bg-cream-200 text-slate-800 text-xs font-bold">Tín hiệu kín đáo</span>
+                </div>
+
+                <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+                  Khi không biết mở lời thế nào, học sinh có thể kẹp những chiếc thẻ nhỏ này vào vở bài tập, để kín đáo trên bàn làm việc của giáo viên hoặc gửi qua hòm thư cố vấn:
+                </p>
+
+                <!-- 4 Physical Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  <!-- Green Card -->
+                  <div
+                    onclick="selectSignalCard(1)"
+                    id="signal-card-1"
+                    class="signal-card p-4 rounded-2xl border-2 border-emerald-300 bg-emerald-50/70 hover:bg-emerald-100 cursor-pointer transition-all shadow-sm"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span class="w-3.5 h-3.5 rounded-full bg-emerald-500"></span>
+                      <span class="text-xs font-bold text-emerald-950 uppercase tracking-wide">Màu Xanh Lá</span>
+                    </div>
+                    <h4 class="font-display font-bold text-slate-900 text-sm mt-2">“Mình muốn được lắng nghe”</h4>
+                    <p class="text-xs text-slate-600 mt-1">Chỉ cần một người ngồi nghe, chưa cần lời khuyên hay phán xét.</p>
+                  </div>
+
+                  <!-- Yellow Card -->
+                  <div
+                    onclick="selectSignalCard(2)"
+                    id="signal-card-2"
+                    class="signal-card p-4 rounded-2xl border-2 border-amber-300 bg-amber-50/70 hover:bg-amber-100 cursor-pointer transition-all shadow-sm"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span class="w-3.5 h-3.5 rounded-full bg-amber-500"></span>
+                      <span class="text-xs font-bold text-amber-950 uppercase tracking-wide">Màu Vàng</span>
+                    </div>
+                    <h4 class="font-display font-bold text-slate-900 text-sm mt-2">“Mình đang quá tải”</h4>
+                    <p class="text-xs text-slate-600 mt-1">Lượng bài tập, kỳ vọng hoặc lịch trình vượt quá khả năng chịu đựng.</p>
+                  </div>
+
+                  <!-- Orange Card -->
+                  <div
+                    onclick="selectSignalCard(3)"
+                    id="signal-card-3"
+                    class="signal-card p-4 rounded-2xl border-2 border-orange-300 bg-orange-50/70 hover:bg-orange-100 cursor-pointer transition-all shadow-sm"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span class="w-3.5 h-3.5 rounded-full bg-orange-500"></span>
+                      <span class="text-xs font-bold text-orange-950 uppercase tracking-wide">Màu Cam</span>
+                    </div>
+                    <h4 class="font-display font-bold text-slate-900 text-sm mt-2">“Mình cần một khoảng nghỉ”</h4>
+                    <p class="text-xs text-slate-600 mt-1">Xin phép được chậm lại 10-15 phút để lấy lại thăng bằng nhịp thở.</p>
+                  </div>
+
+                  <!-- Blue Card -->
+                  <div
+                    onclick="selectSignalCard(4)"
+                    id="signal-card-4"
+                    class="signal-card p-4 rounded-2xl border-2 border-sky-300 bg-sky-50/70 hover:bg-sky-100 cursor-pointer transition-all shadow-sm"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span class="w-3.5 h-3.5 rounded-full bg-sky-500"></span>
+                      <span class="text-xs font-bold text-sky-950 uppercase tracking-wide">Màu Xanh Dương</span>
+                    </div>
+                    <h4 class="font-display font-bold text-slate-900 text-sm mt-2">“Mình muốn nói chuyện riêng”</h4>
+                    <p class="text-xs text-slate-600 mt-1">Cần một không gian kín đáo 1-1 không bị bạn bè để ý.</p>
+                  </div>
+                </div>
+
+                <!-- Signal Card Guidance Detail Box -->
+                <div id="signal-detail-box" class="mt-4 p-4 rounded-2xl bg-cream-50 border border-cream-300 text-xs text-slate-700 leading-relaxed">
+                  <span class="font-bold text-mint-800 block mb-1">Cách vận hành tinh tế tại THPT Lương Thế Vinh:</span>
+                  Giáo viên nhận thẻ sẽ không gọi học sinh lên trước lớp, mà kín đáo ghi lời nhắn hoặc hẹn gặp nhẹ nhàng ở Góc 15 Phút (“Just Talk”) trong giờ giải lao.
+                </div>
+              </div>
+
+              <div class="mt-4 pt-3 border-t border-cream-200 flex items-center justify-between text-xs text-slate-500">
+                <span>Giải pháp giảm thiểu rào cản e ngại</span>
+                <span class="text-mint-700 font-medium">An toàn • Tế nhị</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. HỆ SINH THÁI ĐỒNG HÀNH: SEE – CHECK – CONNECT – CARE -->
+      <section id="he-sinh-thai" class="py-16 sm:py-24 bg-white border-b border-cream-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-2xl mx-auto mb-14">
+            <span class="inline-block text-xs font-bold uppercase tracking-wider text-mint-800 bg-mint-100 border border-mint-200 px-3.5 py-1 rounded-full">
+              Mô hình can thiệp toàn diện
+            </span>
+            <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
+              Hệ sinh thái đồng hành "Behind The Smile"
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base mt-2.5 leading-relaxed">
+              Triển khai tại Trường THPT Lương Thế Vinh với 4 trụ cột chuẩn hóa: SEE – CHECK – CONNECT – CARE.
+            </p>
+          </div>
+
+          <!-- 4 Pillars Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Step 1: SEE -->
+            <div class="bg-cream-50/70 rounded-3xl p-6 border-2 border-mint-100 hover:border-mint-300 transition-all flex flex-col justify-between shadow-sm">
+              <div>
+                <div class="w-12 h-12 rounded-2xl bg-mint-100 text-mint-800 flex items-center justify-center font-display font-extrabold text-lg mb-4">
+                  01
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="font-display font-extrabold text-slate-900 text-lg">SEE</span>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-mint-100 text-mint-800 font-bold">Nhìn thấy</span>
+                </div>
+                <h4 class="font-display font-bold text-mint-800 text-sm mt-1.5">“Radar thay đổi”</h4>
+                <p class="text-xs text-slate-600 mt-2.5 leading-relaxed">
+                  Không phán xét ai "có bệnh", chỉ tinh tế nhận ra <strong>sự thay đổi của một người so với chính họ trước đây</strong>:
+                </p>
+                <ul class="mt-3 space-y-1.5 text-xs text-slate-600 list-disc list-inside">
+                  <li>Đột nhiên ít nói, rút lui khỏi nhóm</li>
+                  <li>Dấu hiệu thay đổi giấc ngủ (quầng thâm mắt)</li>
+                  <li>Hay nói "không sao" nhưng ánh mắt mệt mỏi</li>
+                  <li>Giảm sút hứng thú với những việc từng thích</li>
+                </ul>
+              </div>
+              <div class="mt-6 pt-3 border-t border-cream-200 text-[11px] text-mint-700 font-semibold">
+                Nguyên tắc: Quan sát không phán xét
+              </div>
+            </div>
+
+            <!-- Step 2: CHECK -->
+            <div class="bg-cream-50/70 rounded-3xl p-6 border-2 border-sun-100 hover:border-sun-300 transition-all flex flex-col justify-between shadow-sm">
+              <div>
+                <div class="w-12 h-12 rounded-2xl bg-sun-100 text-sun-700 flex items-center justify-center font-display font-extrabold text-lg mb-4">
+                  02
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="font-display font-extrabold text-slate-900 text-lg">CHECK</span>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-sun-100 text-sun-800 font-bold">Kiểm tra</span>
+                </div>
+                <h4 class="font-display font-bold text-sun-700 text-sm mt-1.5">“Check-in năng lượng”</h4>
+                <p class="text-xs text-slate-600 mt-2.5 leading-relaxed">
+                  Biến việc hỏi thăm sức khỏe tinh thần thành thói quen tự nhiên hằng ngày thông qua biểu tượng pin:
+                </p>
+                <!-- Mini Battery interactive -->
+                <div class="mt-3.5 bg-white p-3.5 rounded-2xl border border-cream-300">
+                  <span class="text-[11px] font-bold text-slate-700 block mb-2">Mức pin hôm nay của bạn:</span>
+                  <div class="grid grid-cols-4 gap-1.5">
+                    <button type="button" onclick="setBatteryCheck(100)" class="py-1 text-[11px] font-bold rounded-lg bg-emerald-100 text-emerald-800 hover:bg-emerald-200">100%</button>
+                    <button type="button" onclick="setBatteryCheck(70)" class="py-1 text-[11px] font-bold rounded-lg bg-yellow-100 text-yellow-800 hover:bg-yellow-200">70%</button>
+                    <button type="button" onclick="setBatteryCheck(40)" class="py-1 text-[11px] font-bold rounded-lg bg-orange-100 text-orange-800 hover:bg-orange-200">40%</button>
+                    <button type="button" onclick="setBatteryCheck(15)" class="py-1 text-[11px] font-bold rounded-lg bg-rose-100 text-rose-800 hover:bg-rose-200">15%</button>
+                  </div>
+                  <div id="battery-feedback" class="text-[11px] text-slate-500 mt-2.5 italic text-center">
+                    Bấm chọn thử một mức pin
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 pt-3 border-t border-cream-200 text-[11px] text-sun-700 font-semibold">
+                Nguyên tắc: Tự nhiên, không gượng ép
+              </div>
+            </div>
+
+            <!-- Step 3: CONNECT -->
+            <div class="bg-cream-50/70 rounded-3xl p-6 border-2 border-mint-100 hover:border-mint-300 transition-all flex flex-col justify-between shadow-sm">
+              <div>
+                <div class="w-12 h-12 rounded-2xl bg-mint-100 text-mint-800 flex items-center justify-center font-display font-extrabold text-lg mb-4">
+                  03
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="font-display font-extrabold text-slate-900 text-lg">CONNECT</span>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-mint-100 text-mint-800 font-bold">Kết nối</span>
+                </div>
+                <h4 class="font-display font-bold text-mint-800 text-sm mt-1.5">LTV Buddy (4 Kỹ năng)</h4>
+                <p class="text-xs font-semibold text-mint-900 italic mt-2">
+                  “Bạn bè không phải người chữa lành; bạn bè là người giúp bạn không phải đi một mình.”
+                </p>
+                <div class="mt-3 space-y-1.5 text-xs text-slate-700">
+                  <div class="flex items-start gap-1.5">
+                    <strong class="text-mint-700 font-bold">L</strong> (Listen): Lắng nghe không ngắt lời.
+                  </div>
+                  <div class="flex items-start gap-1.5">
+                    <strong class="text-mint-700 font-bold">V</strong> (Validate): Công nhận cảm xúc, không so sánh.
+                  </div>
+                  <div class="flex items-start gap-1.5">
+                    <strong class="text-mint-700 font-bold">T</strong> (Tell): Báo cho người lớn phù hợp khi nguy cơ.
+                  </div>
+                  <div class="flex items-start gap-1.5">
+                    <strong class="text-mint-700 font-bold">B</strong> (Bridge): Cầu nối tới giáo viên / chuyên gia.
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6 pt-3 border-t border-cream-200 text-[11px] text-mint-700 font-semibold">
+                Nguyên tắc: Cầu nối an toàn
+              </div>
+            </div>
+
+            <!-- Step 4: CARE -->
+            <div class="bg-cream-50/70 rounded-3xl p-6 border-2 border-blue-100 hover:border-blue-300 transition-all flex flex-col justify-between shadow-sm">
+              <div>
+                <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center font-display font-extrabold text-lg mb-4">
+                  04
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="font-display font-extrabold text-slate-900 text-lg">CARE</span>
+                  <span class="text-xs px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800 font-bold">Đồng hành</span>
+                </div>
+                <h4 class="font-display font-bold text-blue-800 text-sm mt-1.5">Góc 15 phút – “Just Talk”</h4>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+                  Không dùng tên "Phòng tâm lý" nặng nề. Không gian riêng tư thực hiện <strong>Nguyên tắc 5 KHÔNG</strong>:
+                </p>
+                <div class="mt-3 space-y-1 text-xs text-slate-700">
+                  <span class="block px-2.5 py-1 rounded-lg bg-white border border-cream-200">1. Không phán xét</span>
+                  <span class="block px-2.5 py-1 rounded-lg bg-white border border-cream-200">2. Không ép nói</span>
+                  <span class="block px-2.5 py-1 rounded-lg bg-white border border-cream-200">3. Không hỏi dồn</span>
+                  <span class="block px-2.5 py-1 rounded-lg bg-white border border-cream-200">4. Tôn trọng riêng tư</span>
+                  <span class="block px-2.5 py-1 rounded-lg bg-white border border-cream-200">5. Chuyển tuyến chuyên môn</span>
+                </div>
+              </div>
+              <div class="mt-6 pt-3 border-t border-cream-200 text-[11px] text-blue-700 font-semibold">
+                Nguyên tắc: Bảo mật & Chuyên nghiệp
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. CẨM NANG KẾT NỐI: "MỘT CÂU HỎI KHÁC ĐI" -->
+      <section id="cam-nang" class="py-16 sm:py-24 bg-cream-50/70 border-b border-cream-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="inline-block text-xs font-bold uppercase tracking-wider text-mint-800 bg-mint-100 border border-mint-200 px-3.5 py-1 rounded-full">
+              Dành cho thầy cô & bạn bè
+            </span>
+            <h2 class="font-display text-2xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
+              Cẩm nang: "Một câu hỏi khác đi"
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base mt-2.5 leading-relaxed">
+              Thay đổi cách mở lời để phá vỡ câu trả lời phản xạ tự động <span class="italic font-bold text-slate-800">“Dạ em ổn / Tớ không sao”</span>.
+            </p>
+          </div>
+
+          <!-- Comparison Card -->
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-mint-200 shadow-card">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-7 border-b border-cream-200">
+              <!-- Old Way -->
+              <div class="p-5 rounded-2xl bg-rose-50/70 border border-rose-200">
+                <div class="flex items-center gap-2 text-rose-700 text-xs font-bold uppercase tracking-wider mb-2">
+                  <i data-lucide="x-circle" class="w-4 h-4"></i>
+                  <span>Câu hỏi quán tính cũ (Đóng lối sẻ chia)</span>
+                </div>
+                <p class="text-base font-bold text-slate-800">“Em / Cậu có ổn không?”</p>
+                <div class="mt-2.5 text-xs text-rose-800 bg-white/90 p-2.5 rounded-xl border border-rose-100 flex items-center gap-2">
+                  <i data-lucide="corner-down-right" class="w-4 h-4 text-rose-500 shrink-0"></i>
+                  <span>Phản xạ tự vệ: <strong>“Dạ em ổn ạ” / “Tớ bình thường mà.”</strong></span>
+                </div>
+              </div>
+
+              <!-- New Way -->
+              <div class="p-5 rounded-2xl bg-emerald-50/70 border border-emerald-200">
+                <div class="flex items-center gap-2 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-2">
+                  <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                  <span>Lăng kính 30 giây (Câu hỏi mở thấu cảm)</span>
+                </div>
+                <p class="text-base font-bold text-slate-800">Hỏi về năng lượng, gánh nặng hoặc sự lựa chọn</p>
+                <div class="mt-2.5 text-xs text-emerald-800 bg-white/90 p-2.5 rounded-xl border border-emerald-100 flex items-center gap-2">
+                  <i data-lucide="sparkles" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>Tạo không gian an toàn để đối phương nói thật mức pin trong lòng.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5 Open Questions Interactive Cards -->
+            <div class="mt-8">
+              <h3 class="font-display font-bold text-slate-900 text-base mb-4 flex items-center gap-2">
+                <i data-lucide="list-checks" class="w-5 h-5 text-mint-700"></i>
+                <span>5 Câu hỏi gợi mở nên áp dụng trong giờ sinh hoạt hoặc giải lao:</span>
+              </h3>
+
+              <div class="space-y-3.5">
+                <!-- Question 1 -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-cream-50 hover:bg-mint-50/80 border border-cream-200 transition-all">
+                  <div class="flex items-start gap-3">
+                    <span class="w-6 h-6 rounded-full bg-mint-700 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+                    <div>
+                      <p class="text-sm font-semibold text-slate-900">
+                        “Nếu hôm nay tâm trạng của em là một mức pin điện thoại, em còn bao nhiêu %?”
+                      </p>
+                      <span class="text-xs text-slate-500">Giúp định lượng cảm xúc mà không bắt ép gọi tên vấn đề.</span>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onclick="copyQuestionText('Nếu hôm nay tâm trạng của em là một mức pin điện thoại, em còn bao nhiêu %?', this)"
+                    class="self-start sm:self-auto px-3.5 py-1.5 rounded-xl bg-white hover:bg-mint-100 text-mint-800 border border-mint-200 text-xs font-semibold shrink-0 transition-colors flex items-center gap-1.5 shadow-sm"
+                  >
+                    <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                    <span>Sao chép</span>
+                  </button>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-cream-50 hover:bg-mint-50/80 border border-cream-200 transition-all">
+                  <div class="flex items-start gap-3">
+                    <span class="w-6 h-6 rounded-full bg-mint-700 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+                    <div>
+                      <p class="text-sm font-semibold text-slate-900">
+                        “Dạo này điều gì đang chiếm nhiều năng lượng của em nhất?”
+                      </p>
+                      <span class="text-xs text-slate-500">Nhẹ nhàng chạm vào gánh nặng học tập, bạn bè hay gia đình.</span>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onclick="copyQuestionText('Dạo này điều gì đang chiếm nhiều năng lượng của em nhất?', this)"
+                    class="self-start sm:self-auto px-3.5 py-1.5 rounded-xl bg-white hover:bg-mint-100 text-mint-800 border border-mint-200 text-xs font-semibold shrink-0 transition-colors flex items-center gap-1.5 shadow-sm"
+                  >
+                    <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                    <span>Sao chép</span>
+                  </button>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-cream-50 hover:bg-mint-50/80 border border-cream-200 transition-all">
+                  <div class="flex items-start gap-3">
+                    <span class="w-6 h-6 rounded-full bg-mint-700 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
+                    <div>
+                      <p class="text-sm font-semibold text-slate-900">
+                        “Có điều gì em đang cố gắng chịu đựng một mình không?”
+                      </p>
+                      <span class="text-xs text-slate-500">Gửi tín hiệu an tâm: Bạn không còn phải gồng gánh một mình nữa.</span>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onclick="copyQuestionText('Có điều gì em đang cố gắng chịu đựng một mình không?', this)"
+                    class="self-start sm:self-auto px-3.5 py-1.5 rounded-xl bg-white hover:bg-mint-100 text-mint-800 border border-mint-200 text-xs font-semibold shrink-0 transition-colors flex items-center gap-1.5 shadow-sm"
+                  >
+                    <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                    <span>Sao chép</span>
+                  </button>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-cream-50 hover:bg-mint-50/80 border border-cream-200 transition-all">
+                  <div class="flex items-start gap-3">
+                    <span class="w-6 h-6 rounded-full bg-mint-700 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">4</span>
+                    <div>
+                      <p class="text-sm font-semibold text-slate-900">
+                        “Nếu được bỏ một áp lực trong tuần này, em muốn bỏ điều gì?”
+                      </p>
+                      <span class="text-xs text-slate-500">Xác định điểm nghẽn gây kiệt sức lớn nhất lúc này.</span>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onclick="copyQuestionText('Nếu được bỏ một áp lực trong tuần này, em muốn bỏ điều gì?', this)"
+                    class="self-start sm:self-auto px-3.5 py-1.5 rounded-xl bg-white hover:bg-mint-100 text-mint-800 border border-mint-200 text-xs font-semibold shrink-0 transition-colors flex items-center gap-1.5 shadow-sm"
+                  >
+                    <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                    <span>Sao chép</span>
+                  </button>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-cream-50 hover:bg-mint-50/80 border border-cream-200 transition-all">
+                  <div class="flex items-start gap-3">
+                    <span class="w-6 h-6 rounded-full bg-mint-700 text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">5</span>
+                    <div>
+                      <p class="text-sm font-semibold text-slate-900">
+                        “Em muốn được lắng nghe hay muốn cùng tìm giải pháp?”
+                      </p>
+                      <span class="text-xs text-slate-500">Tôn trọng nhu cầu thật sự của học sinh trước khi đưa ra lời khuyên.</span>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    onclick="copyQuestionText('Em muốn được lắng nghe hay muốn cùng tìm giải pháp?', this)"
+                    class="self-start sm:self-auto px-3.5 py-1.5 rounded-xl bg-white hover:bg-mint-100 text-mint-800 border border-mint-200 text-xs font-semibold shrink-0 transition-colors flex items-center gap-1.5 shadow-sm"
+                  >
+                    <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                    <span>Sao chép</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 8. FOOTER SECTION -->
+    <footer class="bg-slate-950 text-slate-300 pt-16 pb-12 border-t border-slate-900">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Big Closing Quote -->
+        <div class="text-center max-w-3xl mx-auto pb-12 border-b border-slate-800">
+          <div class="w-12 h-12 mx-auto rounded-full bg-mint-900/60 border border-mint-700 text-sun-400 flex items-center justify-center mb-4">
+            <i data-lucide="heart" class="w-6 h-6 fill-current text-sun-400"></i>
+          </div>
+          <h2 class="font-display font-bold text-xl sm:text-2xl text-white leading-relaxed">
+            “Đừng để nụ cười trở thành bức tường ngăn cách bạn với thế giới.<br class="hidden sm:inline" />
+            Tại THPT Lương Thế Vinh, bạn không bao giờ phải một mình.”
+          </h2>
+          <p class="mt-3 text-xs sm:text-sm text-slate-400">
+            Dự án Nghiên cứu Khoa học Kỹ thuật: "BEHIND THE SMILE – Nhìn sau nụ cười"
+          </p>
+        </div>
+
+        <!-- Information & Emergency Contacts Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 py-10 border-b border-slate-800 text-xs sm:text-sm">
+          <!-- Col 1: Project Info -->
+          <div>
+            <h3 class="font-display font-bold text-white text-base mb-3 flex items-center gap-2">
+              <i data-lucide="school" class="w-4 h-4 text-mint-400"></i>
+              <span>Trường THPT Lương Thế Vinh</span>
+            </h3>
+            <p class="text-slate-400 leading-relaxed">
+              Dự án hướng đến việc nhận diện sớm và can thiệp kịp thời các nguy cơ sức khỏe tinh thần ở học sinh có biểu hiện thích ứng bề ngoài nhưng chịu áp lực nội tâm cao.
+            </p>
+            <div class="mt-3 text-xs text-mint-400 font-semibold">
+              Nhóm tác giả học sinh & Giáo viên hướng dẫn KHKT
+            </div>
+          </div>
+
+          <!-- Col 2: School Support Hub -->
+          <div>
+            <h3 class="font-display font-bold text-white text-base mb-3 flex items-center gap-2">
+              <i data-lucide="map-pin" class="w-4 h-4 text-sun-400"></i>
+              <span>Góc Đồng Hành Tại Trường</span>
+            </h3>
+            <ul class="space-y-2 text-slate-400">
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-mint-400"></i>
+                <span>Góc 15 Phút (“Just Talk”) – Tầng 2 Khu Hiệu Bộ</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-mint-400"></i>
+                <span>Hòm thư ẩn danh: “Gửi LTV Buddy”</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="check" class="w-3.5 h-3.5 text-mint-400"></i>
+                <span>Ban Cố vấn & Giáo viên Chủ nhiệm hỗ trợ 24/7</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 3: National Emergency Hotlines -->
+          <div>
+            <h3 class="font-display font-bold text-white text-base mb-3 flex items-center gap-2">
+              <i data-lucide="phone-call" class="w-4 h-4 text-rose-400"></i>
+              <span>Tổng Đài Hỗ Trợ Khẩn Cấp</span>
+            </h3>
+            <div class="space-y-2.5">
+              <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between">
+                <div>
+                  <span class="block text-white font-semibold text-xs">Tổng đài Quốc gia Bảo vệ Trẻ em</span>
+                  <span class="text-slate-400 text-[11px]">Miễn cước cuộc gọi 24/7</span>
+                </div>
+                <span class="font-mono font-bold text-sun-400 text-sm px-2 py-0.5 rounded bg-slate-950">111</span>
+              </div>
+              <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-between">
+                <div>
+                  <span class="block text-white font-semibold text-xs">Đường dây nóng Ngày Mai</span>
+                  <span class="text-slate-400 text-[11px]">Hỗ trợ người trầm cảm & khủng hoảng</span>
+                </div>
+                <span class="font-mono font-bold text-sun-400 text-xs px-2 py-0.5 rounded bg-slate-950">096 306 1414</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright & Disclaimers -->
+        <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+          <p>© 2024–2025 Behind The Smile. Trường THPT Lương Thế Vinh. Trang tĩnh nghiên cứu khoa học.</p>
+          <div class="flex items-center gap-4">
+            <span class="hover:text-slate-400">Không thu thập Cookie</span>
+            <span>•</span>
+            <span class="hover:text-slate-400">100% Client-side</span>
+            <span>•</span>
+            <a href="#hero" class="text-mint-400 hover:underline">Về đầu trang ↑</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 pointer-events-none transition-all duration-300 bg-slate-900 text-white px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-2 text-xs font-semibold border border-slate-700">
+      <i data-lucide="check" class="w-4 h-4 text-emerald-400"></i>
+      <span id="toast-message">Đã sao chép!</span>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+      // Initialize Lucide Icons
+      document.addEventListener('DOMContentLoaded', () => {
+        if (window.lucide) {
+          window.lucide.createIcons();
+        }
+      });
+
+      // Mobile Menu Toggle
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileBtn && mobileMenu) {
+        mobileBtn.addEventListener('click', () => {
+          const isExpanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+          mobileBtn.setAttribute('aria-expanded', !isExpanded);
+          mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+
+      // Hero Interactive Switcher
+      function switchHeroLayer(layer) {
+        const card = document.getElementById('hero-interactive-card');
+        const content = document.getElementById('hero-layer-content');
+        const btn1 = document.getElementById('hero-toggle-btn-1');
+        const btn2 = document.getElementById('hero-toggle-btn-2');
+
+        if (layer === 1) {
+          btn1.className = 'py-2 px-3 rounded-xl text-xs font-bold transition-all bg-white text-mint-900 shadow-sm';
+          btn2.className = 'py-2 px-3 rounded-xl text-xs font-bold transition-all text-slate-600 hover:text-slate-900';
+          content.innerHTML = `
+            <div class="flex items-center justify-between text-xs text-mint-800 font-semibold mb-3">
+              <span class="px-3 py-1 rounded-full bg-mint-100 border border-mint-200">LỚP 1: Điều bạn bè nhìn thấy</span>
+              <i data-lucide="sun" class="w-4 h-4 text-sun-500"></i>
+            </div>
+            <div class="my-auto py-2">
+              <div class="w-16 h-16 rounded-2xl bg-mint-100 flex items-center justify-center text-mint-700 mb-3 mx-auto">
+                <i data-lucide="smile" class="w-9 h-9 stroke-[2.2]"></i>
+              </div>
+              <h3 class="font-display font-extrabold text-xl text-center text-slate-900">“Cậu ấy lúc nào cũng vui vẻ!”</h3>
+              <p class="text-xs text-center text-slate-500 mt-2 leading-relaxed">
+                Điểm số tốt, luôn xung phong phát biểu, tham gia hoạt động năng nổ, câu cửa miệng: <em>"Mình ổn mà!"</em>
+              </p>
+            </div>
+          `;
+        } else {
+          btn2.className = 'py-2 px-3 rounded-xl text-xs font-bold transition-all bg-white text-rose-900 shadow-sm';
+          btn1.className = 'py-2 px-3 rounded-xl text-xs font-bold transition-all text-slate-600 hover:text-slate-900';
+          content.innerHTML = `
+            <div class="flex items-center justify-between text-xs text-rose-800 font-semibold mb-3">
+              <span class="px-3 py-1 rounded-full bg-rose-100 border border-rose-200">LỚP 2: Nỗi niềm sâu kín lúc 2h sáng</span>
+              <i data-lucide="moon" class="w-4 h-4 text-indigo-500"></i>
+            </div>
+            <div class="my-auto py-2">
+              <div class="w-16 h-16 rounded-2xl bg-rose-50 border border-rose-200 flex items-center justify-center text-rose-600 mb-3 mx-auto">
+                <i data-lucide="frown" class="w-9 h-9 stroke-[2.2]"></i>
+              </div>
+              <h3 class="font-display font-extrabold text-xl text-center text-rose-950">“Mình kiệt sức rồi...”</h3>
+              <p class="text-xs text-center text-slate-600 mt-2 leading-relaxed">
+                Áp lực kỳ vọng gia đình, nỗi sợ bị phán xét là "yếu đuối", cảm giác cô độc trùm chăn khóc một mình giữa đêm.
+              </p>
+            </div>
+          `;
+        }
+        if (window.lucide) window.lucide.createIcons();
+      }
+
+      // 1. FLIP CARDS INTERACTION
+      function toggleFlipCard(cardEl) {
+        cardEl.classList.toggle('is-flipped');
+      }
+
+      let allCardsFlipped = false;
+      function toggleAllCards() {
+        const cards = document.querySelectorAll('.flip-card');
+        allCardsFlipped = !allCardsFlipped;
+        cards.forEach((c) => {
+          if (allCardsFlipped) {
+            c.classList.add('is-flipped');
+          } else {
+            c.classList.remove('is-flipped');
+          }
+        });
+        const btn = document.getElementById('flip-all-btn');
+        if (btn) {
+          btn.innerHTML = allCardsFlipped
+            ? '<i data-lucide="rotate-ccw" class="w-4 h-4"></i><span>Lật lại mặt trước</span>'
+            : '<i data-lucide="refresh-cw" class="w-4 h-4"></i><span>Lật xem tất cả mặt nạ</span>';
+          if (window.lucide) window.lucide.createIcons();
+        }
+      }
+
+      // 2. SMILE-FEEL GAP SIMULATOR INTERACTION
+      function calculateGap() {
+        const aChecked = document.querySelectorAll('.col-a-check:checked').length;
+        const bChecked = document.querySelectorAll('.col-b-check:checked').length;
+
+        document.getElementById('col-a-count').textContent = `${aChecked}/4`;
+        document.getElementById('col-b-count').textContent = `${bChecked}/4`;
+
+        const progressBar = document.getElementById('gap-progress-bar');
+        const levelText = document.getElementById('gap-level-text');
+        const messageBox = document.getElementById('gap-message-content');
+
+        if (aChecked === 0 && bChecked === 0) {
+          progressBar.style.width = '10%';
+          levelText.textContent = 'Chờ bạn tích chọn';
+          levelText.className = 'text-mint-700';
+          messageBox.textContent = 'Hãy tích vào những tiêu chí bạn cảm thấy quen thuộc ở 2 cột bên trên. Hệ thống sẽ đo lường mức độ chênh lệch giữa điều bạn thể hiện và điều bạn đang chịu đựng một mình.';
+          return;
+        }
+
+        let gapScore = 0;
+        let message = '';
+        let level = '';
+        let levelColor = '';
+
+        if (aChecked >= 3 && bChecked >= 3) {
+          gapScore = 95;
+          level = 'RẤT LỚN (Nguy cơ kiệt sức / Trầm cảm cười cao)';
+          levelColor = 'text-rose-600 font-extrabold';
+          message = 'Bạn đang gồng mình nhiều hơn bạn nghĩ đấy. Việc luôn phải giữ nụ cười và chứng minh mình ổn trước mặt mọi người đang bào mòn rất nhiều năng lượng của bạn. Không ai bắt bạn phải luôn hoàn hảo hay luôn mạnh mẽ cả. Hãy cho phép mình được mệt, được khóc và thử gửi một tín hiệu tới người bạn tin tưởng nhé!';
+        } else if (aChecked >= 2 && bChecked >= 2) {
+          gapScore = 70;
+          level = 'Đáng chú ý (Có khoảng cách cảm xúc)';
+          levelColor = 'text-sun-600 font-bold';
+          message = 'Bạn đang mang trong mình một vài tâm sự chưa thể nói ra, trong khi bên ngoài vẫn cố gắng duy trì nhịp sống bình thường. Đừng đợi đến khi chiếc cốc cảm xúc tràn ly mới tìm kiếm sự hỗ trợ bạn nhé!';
+        } else if (aChecked > 0 && bChecked === 0) {
+          gapScore = 25;
+          level = 'Thấp (Cân bằng & Tự nhiên)';
+          levelColor = 'text-emerald-700 font-bold';
+          message = 'Nụ cười của bạn phản ánh sự lạc quan tự nhiên. Hãy tiếp tục giữ nguồn năng lượng tích cực này và trở thành một người bạn biết lắng nghe cho những người xung quanh nhé!';
+        } else if (aChecked <= 1 && bChecked >= 2) {
+          gapScore = 55;
+          level = 'Có áp lực nội tâm (Không che giấu bằng nụ cười)';
+          levelColor = 'text-amber-600 font-bold';
+          message = 'Bạn đang cảm nhận rõ sự mệt mỏi trong mình và không muốn gượng ép cười nói. Việc nhận diện được cảm xúc thật là bước đầu tiên rất can đảm. Hãy tìm đến Góc 15 Phút hoặc người bạn thân để cùng chia sẻ nhé!';
+        } else {
+          gapScore = 40;
+          level = 'Đang ở mức an toàn vừa phải';
+          levelColor = 'text-mint-700 font-bold';
+          message = 'Hãy thường xuyên dành ra 5 phút mỗi ngày để tự hỏi bản thân: "Hôm nay mình thật sự cảm thấy thế nào?" để giữ tâm trí luôn nhẹ nhõm.';
+        }
+
+        progressBar.style.width = `${gapScore}%`;
+        levelText.textContent = level;
+        levelText.className = levelColor;
+        messageBox.innerHTML = message;
+      }
+
+      function resetSimulator() {
+        document.querySelectorAll('.col-a-check, .col-b-check').forEach((cb) => (cb.checked = false));
+        calculateGap();
+      }
+
+      // 3. AUDIO DIARY SIMULATOR
+      let audioCtx = null;
+      let isPlaying = false;
+      let playbackTimer = null;
+      let currentSeconds = 0;
+      const totalSeconds = 150; // 02:30
+
+      let rainNoiseNode = null;
+      let filterNode = null;
+      let gainNode = null;
+      let oscNode = null;
+
+      function initWebAudio() {
+        if (!audioCtx) {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          if (AudioContext) {
+            audioCtx = new AudioContext();
+          }
+        }
+      }
+
+      function startHealingSynth() {
+        if (!audioCtx) return;
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+
+        try {
+          const bufferSize = audioCtx.sampleRate * 2;
+          const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+          const output = noiseBuffer.getChannelData(0);
+          for (let i = 0; i < bufferSize; i++) {
+            output[i] = Math.random() * 2 - 1;
+          }
+
+          rainNoiseNode = audioCtx.createBufferSource();
+          rainNoiseNode.buffer = noiseBuffer;
+          rainNoiseNode.loop = true;
+
+          filterNode = audioCtx.createBiquadFilter();
+          filterNode.type = 'lowpass';
+          filterNode.frequency.setValueAtTime(450, audioCtx.currentTime);
+
+          gainNode = audioCtx.createGain();
+          gainNode.gain.setValueAtTime(0.04, audioCtx.currentTime);
+
+          rainNoiseNode.connect(filterNode);
+          filterNode.connect(gainNode);
+          gainNode.connect(audioCtx.destination);
+          rainNoiseNode.start();
+
+          oscNode = audioCtx.createOscillator();
+          const oscGain = audioCtx.createGain();
+          oscNode.type = 'sine';
+          oscNode.frequency.setValueAtTime(220, audioCtx.currentTime);
+          oscGain.gain.setValueAtTime(0.015, audioCtx.currentTime);
+          oscNode.connect(oscGain);
+          oscGain.connect(audioCtx.destination);
+          oscNode.start();
+        } catch (e) {
+          console.log('WebAudio soft ambient note fallback active', e);
+        }
+      }
+
+      function stopHealingSynth() {
+        try {
+          if (rainNoiseNode) {
+            rainNoiseNode.stop();
+            rainNoiseNode.disconnect();
+            rainNoiseNode = null;
+          }
+          if (oscNode) {
+            oscNode.stop();
+            oscNode.disconnect();
+            oscNode = null;
+          }
+        } catch (e) {}
+      }
+
+      function formatTime(secs) {
+        const m = Math.floor(secs / 60);
+        const s = secs % 60;
+        return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+      }
+
+      function updateAudioDisplay() {
+        const timeEl = document.getElementById('current-time');
+        const scrubber = document.getElementById('audio-scrubber');
+        if (timeEl) timeEl.textContent = formatTime(currentSeconds);
+        if (scrubber) scrubber.value = currentSeconds;
+
+        highlightTranscriptSegment(currentSeconds);
+      }
+
+      function highlightTranscriptSegment(secs) {
+        const segments = [
+          { id: 'segment-1', start: 0, end: 15 },
+          { id: 'segment-2', start: 15, end: 75 },
+          { id: 'segment-3', start: 75, end: 120 },
+          { id: 'segment-4', start: 120, end: 150 },
+        ];
+
+        segments.forEach((seg) => {
+          const el = document.getElementById(seg.id);
+          if (el) {
+            if (secs >= seg.start && secs < seg.end) {
+              el.classList.add('bg-mint-800/80', 'border-sun-400');
+              el.classList.remove('bg-mint-950/60', 'border-transparent');
+            } else {
+              el.classList.remove('bg-mint-800/80', 'border-sun-400');
+              el.classList.add('bg-mint-950/60', 'border-transparent');
+            }
+          }
+        });
+      }
+
+      function toggleAudioPlay() {
+        initWebAudio();
+        isPlaying = !isPlaying;
+        const playBtn = document.getElementById('play-btn');
+        const soundwave = document.getElementById('soundwave-container');
+        const statusBadge = document.getElementById('audio-status-badge');
+
+        if (isPlaying) {
+          startHealingSynth();
+          if (soundwave) soundwave.classList.remove('opacity-40');
+          if (playBtn) {
+            playBtn.innerHTML = '<i data-lucide="pause" class="w-6 h-6 fill-current"></i>';
+          }
+          if (statusBadge) statusBadge.textContent = 'Đang phát lời tự sự kèm âm thanh chữa lành...';
+
+          playbackTimer = setInterval(() => {
+            currentSeconds++;
+            if (currentSeconds >= totalSeconds) {
+              currentSeconds = 0;
+              toggleAudioPlay();
+            }
+            updateAudioDisplay();
+          }, 1000);
+        } else {
+          stopHealingSynth();
+          if (soundwave) soundwave.classList.add('opacity-40');
+          if (playBtn) {
+            playBtn.innerHTML = '<i data-lucide="play" class="w-6 h-6 fill-current ml-0.5"></i>';
+          }
+          if (statusBadge) statusBadge.textContent = 'Đã tạm dừng';
+          clearInterval(playbackTimer);
+        }
+        if (window.lucide) window.lucide.createIcons();
+      }
+
+      function seekAudio(val) {
+        currentSeconds = parseInt(val, 10);
+        updateAudioDisplay();
+      }
+
+      function skipAudio(delta) {
+        currentSeconds = Math.max(0, Math.min(totalSeconds, currentSeconds + delta));
+        updateAudioDisplay();
+      }
+
+      function jumpToTime(seconds) {
+        currentSeconds = seconds;
+        updateAudioDisplay();
+        if (!isPlaying) {
+          toggleAudioPlay();
+        }
+      }
+
+      let transcriptOpen = true;
+      function toggleTranscript() {
+        transcriptOpen = !transcriptOpen;
+        const drawer = document.getElementById('transcript-drawer');
+        const btnText = document.getElementById('transcript-btn-text');
+        if (drawer && btnText) {
+          if (transcriptOpen) {
+            drawer.classList.remove('hidden');
+            btnText.textContent = 'Thu gọn kịch bản';
+          } else {
+            drawer.classList.add('hidden');
+            btnText.textContent = 'Đọc kịch bản lời thoại';
+          }
+        }
+      }
+
+      // 4. HỘP DIÊM CẢM XÚC
+      const healingCards = [
+        {
+          index: 1,
+          tag: 'Thẻ 1: Bật đèn xanh cho nước mắt',
+          title: '“Được phép không ổn”',
+          body: 'Gửi bạn, người đã cười rất nhiều ngày hôm nay. Nước mắt không phải là sự yếu đuối, nó là cơ chế tự làm sạch của tâm hồn. Tối nay, khi ở một mình, bạn không cần phải mạnh mẽ nữa. Khóc một chút cũng được, đóng cửa lại và là chính mình nhé.',
+        },
+        {
+          index: 2,
+          tag: 'Thẻ 2: Giải độc áp lực hoàn hảo',
+          title: '“Bạn không phải là một cỗ máy”',
+          body: 'Điểm số cao, danh hiệu học sinh xuất sắc, sự kỳ vọng của bố mẹ... tất cả đều rất quan trọng. Nhưng không có thứ nào quan trọng bằng việc bạn được sống thật với cảm xúc của mình. Bạn là con người, và con người thì có quyền được mệt mỏi.',
+        },
+        {
+          index: 3,
+          tag: 'Thẻ 3: Khoảng dừng nhịp thở',
+          title: '“Thở chậm lại, bạn đang an toàn”',
+          body: 'Hãy đặt tay lên ngực trái của mình. Cảm nhận nhịp đập ấy. Bạn đã đi qua rất nhiều bài kiểm tra, rất nhiều nỗi lo sợ, và bạn vẫn đang ở đây. Cảm ơn bạn vì đã kiên trì đến tận ngày hôm nay.',
+        },
+        {
+          index: 4,
+          tag: 'Thẻ 4: Niềm tin kết nối',
+          title: '“Nụ cười thật sự sẽ quay trở lại”',
+          body: 'Đừng lo lắng nếu những ngày này bạn không thể cười nổi một nụ cười chân thật. Nụ cười ấy chỉ đang tạm nghỉ ngơi thôi. Khi bạn chia sẻ gánh nặng với đúng người, sự nhẹ nhõm sẽ tự nhiên trở về.',
+        },
+      ];
+
+      let currentCardIndex = 0;
+      let matchboxIsOpen = false;
+
+      function openMatchboxCard() {
+        const box = document.getElementById('matchbox-container');
+        matchboxIsOpen = !matchboxIsOpen;
+        if (box) {
+          box.classList.toggle('matchbox-open', matchboxIsOpen);
+        }
+        showToast(matchboxIsOpen ? 'Hộp diêm đã mở! Thẻ chữa lành sẵn sàng.' : 'Đã đóng hộp diêm.');
+      }
+
+      function nextHealingCard() {
+        currentCardIndex = (currentCardIndex + 1) % healingCards.length;
+        renderHealingCard();
+        const box = document.getElementById('matchbox-container');
+        if (box && !matchboxIsOpen) {
+          matchboxIsOpen = true;
+          box.classList.add('matchbox-open');
+        }
+      }
+
+      function renderHealingCard() {
+        const card = healingCards[currentCardIndex];
+        document.getElementById('card-index-indicator').textContent = card.index;
+        document.getElementById('healing-card-tag').textContent = card.tag;
+        document.getElementById('healing-card-title').textContent = card.title;
+        document.getElementById('healing-card-body').textContent = `“${card.body}”`;
+
+        const display = document.getElementById('healing-card-display');
+        if (display) {
+          display.classList.add('scale-[1.02]');
+          setTimeout(() => display.classList.remove('scale-[1.02]'), 200);
+        }
+      }
+
+      // 5. BỘ THẺ KÍN ĐÁO SELECTOR
+      function selectSignalCard(cardNum) {
+        document.querySelectorAll('.signal-card').forEach((c) => {
+          c.classList.remove('ring-4', 'ring-mint-500', 'scale-[1.02]');
+        });
+        const selected = document.getElementById(`signal-card-${cardNum}`);
+        if (selected) {
+          selected.classList.add('ring-4', 'ring-mint-500', 'scale-[1.02]');
+        }
+
+        const detailBox = document.getElementById('signal-detail-box');
+        const details = [
+          '',
+          '🟢 Thẻ Xanh Lá: “Mình muốn được lắng nghe” – Giáo viên/Buddy sẽ dành 15 phút chỉ để nghe bạn trút bầu tâm sự mà không nhận xét, không đưa ra lời khuyên nếu bạn chưa yêu cầu.',
+          '🟡 Thẻ Vàng: “Mình đang quá tải” – Giáo viên sẽ xem xét gia hạn bài tập hoặc điều chỉnh khối lượng nhiệm vụ trong tuần để bạn giảm bớt áp lực.',
+          '🟠 Thẻ Cam: “Mình cần một khoảng nghỉ” – Bạn được phép ra góc ban công hoặc phòng y tế uống một ly nước ấm để ổn định cảm xúc.',
+          '🔵 Thẻ Xanh Dương: “Mình muốn nói chuyện riêng” – Giáo viên sẽ chủ động hẹn bạn ở một khung giờ kín đáo sau giờ tan học.',
+        ];
+        if (detailBox) {
+          detailBox.innerHTML = `<span class="font-bold text-mint-800 block mb-1">Hướng dẫn sử dụng:</span>${details[cardNum]}`;
+        }
+      }
+
+      // 6. BATTERY CHECK-IN
+      function setBatteryCheck(percent) {
+        const feedback = document.getElementById('battery-feedback');
+        if (!feedback) return;
+
+        if (percent === 100) {
+          feedback.innerHTML = '<span class="text-emerald-700 font-bold">100% Năng lượng:</span> Bạn đang tràn đầy sức sống! Hãy lan tỏa sự ấm áp tới các bạn xung quanh nhé.';
+        } else if (percent === 70) {
+          feedback.innerHTML = '<span class="text-yellow-700 font-bold">70% Năng lượng:</span> Mức pin khá ổn để học tập, nhớ uống đủ nước và giải lao giữa các tiết nhé!';
+        } else if (percent === 40) {
+          feedback.innerHTML = '<span class="text-orange-700 font-bold">40% Năng lượng:</span> Bắt đầu thấy đuối rồi phải không? Tối nay hãy ưu tiên ngủ sớm và tạm gác việc không gấp lại nhé.';
+        } else {
+          feedback.innerHTML = '<span class="text-rose-700 font-bold">15% Năng lượng (Chế độ tiết kiệm):</span> Bạn đang cạn pin nghiêm trọng. Hãy rút thẻ "Mình cần một khoảng nghỉ" hoặc đến Góc 15 Phút nhé!';
+        }
+      }
+
+      // 7. COPY QUESTION HELPER
+      function copyQuestionText(text, btnElement) {
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(text).then(() => {
+            showToast('Đã sao chép câu hỏi vào bộ nhớ tạm!');
+            if (btnElement) {
+              const origText = btnElement.innerHTML;
+              btnElement.innerHTML = '<i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i><span>Đã chép</span>';
+              if (window.lucide) window.lucide.createIcons();
+              setTimeout(() => {
+                btnElement.innerHTML = origText;
+                if (window.lucide) window.lucide.createIcons();
+              }, 2000);
+            }
+          });
+        }
+      }
+
+      // Toast feedback helper
+      function showToast(message) {
+        const toast = document.getElementById('toast');
+        const toastMsg = document.getElementById('toast-message');
+        if (toast && toastMsg) {
+          toastMsg.textContent = message;
+          toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+          setTimeout(() => {
+            toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+          }, 3000);
+        }
+      }
+    </script>
+  </body>
+</html>
