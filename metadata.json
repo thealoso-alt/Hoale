@@ -1,6 +1,6 @@
 {
   "name": "Behind The Smile - THPT Lương Thế Vinh",
-  "description": "Trang web truyền thông tâm lý học đường: Nhìn sau nụ cười - Nâng cao nhận thức về sức khỏe tinh thần học sinh tại Trường THPT Lương Thế Vinh",
+  "description": "Trang web truyền thông tâm lý học đường KHKT 2026–2027: Nhìn sau nụ cười - Nâng cao nhận thức về sức khỏe tinh thần học sinh tại Trường THPT Lương Thế Vinh",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
